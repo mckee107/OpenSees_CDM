@@ -53,7 +53,8 @@ class DistributedDiagonalSOE : public LinearSOE
     int setSize(Graph &theGraph);
     int addA(const Matrix &, const ID &, double fact = 1.0);
     int addB(const Vector &, const ID &, double fact = 1.0);    
-    int setB(const Vector &, double fact = 1.0);        
+    int setB(const Vector &, double fact = 1.0);     
+    virtual int setC(void);		// MSN: for new convergence test
     
     void zeroA(void);
     void zeroB(void);
@@ -63,6 +64,7 @@ class DistributedDiagonalSOE : public LinearSOE
     
     const Vector &getX(void);
     const Vector &getB(void);
+    const Vector& getC(void);	// MSN: for new convergence test
     double normRHS(void);
 
     int setDiagonalSolver(DistributedDiagonalSolver &newSolver);    
@@ -80,8 +82,10 @@ class DistributedDiagonalSOE : public LinearSOE
   private:
     int size;
     double *A, *B, *X;
+    double* C;		// MSN: external nodal forces, for new convergence test
     Vector *vectX;
     Vector *vectB;
+    Vector* vectC;	// MSN: external nodal forces, for new convergence test
     bool isAfactored;
 
     int processID;

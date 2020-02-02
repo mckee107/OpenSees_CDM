@@ -404,6 +404,16 @@ BandSPDLinSOE::setB(const Vector &v, double fact)
     return 0;
 }
 
+int
+BandSPDLinSOE::setC(void)	// MSN: for new convergence test
+{
+    for (int i = 0; i < size; i++) {
+        C[i] = B[i];
+    }
+
+    return 0;
+}
+
 void 
 BandSPDLinSOE::zeroA(void)
 {
@@ -459,6 +469,17 @@ BandSPDLinSOE::getB(void)
 	exit(-1);
     }    
     return *vectB;
+}
+
+const Vector&
+BandSPDLinSOE::getC(void)		// MSN: for new convergence test
+{
+    if (vectC == 0) {
+        opserr << "FATAL BandSPDLinSOE::getC - vectC == 0!";
+        exit(-1);
+    }
+
+    return *vectC;
 }
 
 double 

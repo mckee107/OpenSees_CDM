@@ -56,7 +56,8 @@ class FullGenLinSOE : public LinearSOE
     int setSize(Graph &theGraph);
     int addA(const Matrix &, const ID &, double fact = 1.0);
     int addB(const Vector &, const ID &, double fact = 1.0);    
-    int setB(const Vector &, double fact = 1.0);        
+    int setB(const Vector &, double fact = 1.0); 
+    int setC(void);		// MSN: for new convergence test
     int addColA(const Vector &col, int colIndex, double fact = 1.0);
     
     void zeroA(void);
@@ -66,6 +67,7 @@ class FullGenLinSOE : public LinearSOE
 
     const Vector &getX(void);
     const Vector &getB(void);    
+    const Vector& getC(void);	// MSN: for new convergence test
     const Matrix *getA(void);
 
     double normRHS(void);
@@ -85,8 +87,10 @@ class FullGenLinSOE : public LinearSOE
   private:
     int size;    
     double *A, *B, *X;
+    double* C;		// MSN: external nodal forces, for new convergence test
     Vector *vectX;
     Vector *vectB;    
+    Vector* vectC;	// MSN: external nodal forces, for new convergence test
     Matrix *matA;
     int Asize, Bsize;
     bool factored;

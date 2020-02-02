@@ -131,6 +131,7 @@ OPS_Stream *opserrPtr = &sserr;
 #include <NormDispAndUnbalance.h>
 #include <NormDispOrUnbalance.h>
 #include <CTestPFEM.h>
+#include <CTestComboNormUnbalance.h>
 
 // soln algorithms
 #include <Linear.h>
@@ -4253,6 +4254,8 @@ specifyCTest(ClientData clientData, Tcl_Interp *interp, int argc,
       theNewTest = new CTestRelativeTotalNormDispIncr(tol,numIter,printIt,normType);             
     else if (strcmp(argv[1],"PFEM") == 0) 
         theNewTest = new CTestPFEM(tol,tolp,tol2,tolp2,tolrel,tolprel,numIter,maxIncr,printIt,normType);
+    else if (strcmp(argv[1], "ComboNormUnbalance") == 0)
+        theNewTest = new CTestComboNormUnbalance(tol, numIter, printIt, normType);
     else {
       opserr << "WARNING No ConvergenceTest type (NormUnbalance, NormDispIncr, EnergyIncr, \n";
       opserr << "RelativeNormUnbalance, RelativeNormDispIncr, RelativeEnergyIncr, \n";

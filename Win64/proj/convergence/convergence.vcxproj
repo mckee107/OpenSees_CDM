@@ -195,6 +195,7 @@
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\SRC\convergenceTest\CTestComboNormUnbalance.cpp" />
     <ClCompile Include="..\..\..\SRC\convergenceTest\CTestEnergyIncr.cpp" />
     <ClCompile Include="..\..\..\SRC\convergenceTest\CTestFixedNumIter.cpp" />
     <ClCompile Include="..\..\..\SRC\convergenceTest\CTestNormDispIncr.cpp" />
@@ -209,6 +210,7 @@
     <ClCompile Include="..\..\..\SRC\convergenceTest\NormDispOrUnbalance.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\SRC\convergenceTest\CTestComboNormUnbalance.h" />
     <ClInclude Include="..\..\..\SRC\convergenceTest\CTestEnergyIncr.h" />
     <ClInclude Include="..\..\..\SRC\convergenceTest\CTestFixedNumIter.h" />
     <ClInclude Include="..\..\..\SRC\convergenceTest\CTestNormDispIncr.h" />

@@ -11,7 +11,8 @@ OBJS       = ConvergenceTest.o \
 	CTestRelativeTotalNormDispIncr.o \
 	NormDispAndUnbalance.o \
 	NormDispOrUnbalance.o \
-	CTestPFEM.o
+	CTestPFEM.o \
+	CTestComboNormUnbalance
 
 all:            $(OBJS) 
 

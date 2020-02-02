@@ -501,6 +501,17 @@ SymSparseLinSOE::setB(const Vector &v, double fact)
     return 0;
 }
 
+int
+SymSparseLinSOE::setC(void)	// MSN: for new convergence test
+{
+    for (int i = 0; i < size; i++) {
+        C[i] = B[i];
+    }
+
+    return 0;
+}
+
+
 
 /* It is used to set all the entries of A to be zero.
  * This method will be called if the structure of A stays the same while the
@@ -568,6 +579,17 @@ SymSparseLinSOE::getB(void)
 	exit(-1);
     }        
     return *vectB;
+}
+
+const Vector&
+SymSparseLinSOE::getC(void)		// MSN: for new convergence test
+{
+    if (vectC == 0) {
+        opserr << "FATAL SparseGenColLinSOE::getC - vectC == 0!";
+        exit(-1);
+    }
+
+    return *vectC;
 }
 
 double 

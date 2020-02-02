@@ -18,100 +18,68 @@
 **                                                                    **
 ** ****************************************************************** */
                                                                         
-// $Revision: 1.5 $
-// $Date: 2009-05-14 22:45:39 $
-// $Source: /usr/local/cvs/OpenSees/SRC/system_of_eqn/linearSOE/LinearSOE.cpp,v $
+// $Revision: 1.0
+// $Date: 03-Feb-2020
+// $Source: 
                                                                         
                                                                         
-// Written: fmk 
-// Created: 11/96
-//
-// Description: This file contains the implementation of LinearSOE.
-//
-// What: "@(#) LinearSOE.C, revA"
+#ifndef CTEstComboNormUnbalance_h
+#define CTEstComboNormUnbalance_h
 
-#include<LinearSOE.h>
-#include<LinearSOESolver.h>
+#include <ConvergenceTest.h>
+#include <MovableObject.h>
+#include <Vector.h>
+#include <bool.h>
 
-LinearSOE::LinearSOE(LinearSOESolver &theLinearSOESolver, int classtag)
-    :MovableObject(classtag), theModel(0), theSolver(&theLinearSOESolver)
+class EquiSolnAlgo;
+class LinearSOE; 
+
+
+class CTestComboNormUnbalance: public ConvergenceTest 
 {
+  public:
+      // constructors
+      CTestComboNormUnbalance();
+      CTestComboNormUnbalance(double tol, int maxNumIter, int printFlag, int normType = 2);
 
-}
+      // destructor
+      ~CTestComboNormUnbalance();
 
-LinearSOE::LinearSOE(int classtag)
-:MovableObject(classtag), theModel(0), theSolver(0)
-{
+      ConvergenceTest* getCopy(int interations);
 
-}
+      void setTolerance(double newTol);
+      int setEquiSolnAlgo(EquiSolnAlgo& theAlgo);
 
+      int test(void);
+      int start(void);
 
-LinearSOE::~LinearSOE()
-{
-  if (theSolver != 0)
-    delete theSolver;
-}
+      int getNumTests(void);
+      int getMaxNumTests(void);
+      double getRatioNumToMax(void);
+      const Vector& getNorms(void);
 
-int 
-LinearSOE::solve(void)
-{
-  if (theSolver != 0)
-    return (theSolver->solve());
-  else 
-    return -1;
-}
+      int sendSelf(int commitTag, Channel& theChannel);
+      int recvSelf(int commitTag, Channel& theChannel, FEM_ObjectBroker& theBroker);
 
-int
-LinearSOE::formAp(const Vector &p, Vector &Ap)
-{
-  return 0;
-}
+  protected:
 
-double
-LinearSOE::getDeterminant(void)
-{
-  if (theSolver != 0)
-    return theSolver->getDeterminant();
-  else 
-    return 0;
-}
+  private:
+      LinearSOE* theSOE;
+      double tol;         // the tol on the norm used to test for convergence
+      double maxTol;
 
+      int maxNumIter;     // max number of iterations
+      int currentIter;    // number of times test() has been invokes since last start()
+      int printFlag;      // a flag indicating if to print on test
+      int nType;          // type of norm to use (1-norm, 2-norm, p-norm, max-norm)
 
+      Vector norms;       // vector to hold the norms
 
-int 
-LinearSOE::setSolver(LinearSOESolver &newSolver)
-{
-    theSolver = &newSolver;
-    return 0;
-}
+      int maxIncr;        // max number of norm increasing
+      int numIncr;        // number of norm increasing
 
-LinearSOESolver *
-LinearSOE::getSolver(void)
-{
-    return theSolver;
-}
-
-int 
-LinearSOE::setLinks(AnalysisModel &theModel)
-{
-    this->theModel = &theModel;
-    return 0;
-}
+};
 
 
-int
-LinearSOE::addA(const Matrix &) {
-  return -1;
-}
-
-int
-LinearSOE::addColA(const Vector &col, int colIndex, double fact) {
-  return -1;
-}
-
-void
-LinearSOE::setA(const Matrix& a)
-{
-
-}
+#endif
 

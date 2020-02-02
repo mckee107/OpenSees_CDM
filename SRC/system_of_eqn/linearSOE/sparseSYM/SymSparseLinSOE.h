@@ -41,13 +41,15 @@ class SymSparseLinSOE : public LinearSOE
     int setSize(Graph &theGraph);
     int addA(const Matrix &, const ID &, double fact = 1.0);
     int addB(const Vector &, const ID &, double fact = 1.0);    
-    int setB(const Vector &, double fact = 1.0);        
+    int setB(const Vector &, double fact = 1.0);    
+    virtual int setC(void);		// MSN: for new convergence test
     
     void zeroA(void);
     void zeroB(void);
     
     const Vector &getX(void);
     const Vector &getB(void);    
+    virtual const Vector& getC(void);	// MSN: for new convergence test
     double normRHS(void);
 
     void setX(int loc, double value);        
@@ -66,10 +68,12 @@ class SymSparseLinSOE : public LinearSOE
     int size;            // order of A
     int nnz;             // number of non-zeros in A
     double *B, *X;       // 1d arrays containing coefficients of B and X
+    double* C;		// MSN: external nodal forces, for new convergence test
     int *colA, *rowStartA;  //These are (ADJNCY, XADJ) pair.
 
     Vector *vectX;
     Vector *vectB;
+    Vector* vectC;	// MSN: external nodal forces, for new convergence test
     int Bsize;
     bool factored;
 

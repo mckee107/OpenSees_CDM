@@ -435,6 +435,16 @@ DistributedDiagonalSOE::setB(const Vector &v, double fact)
   return 0;
 }
 
+int
+DistributedDiagonalSOE::setC(void)	// MSN: for new convergence test
+{
+    for (int i = 0; i < size; i++) {
+        C[i] = B[i];
+    }
+
+    return 0;
+}
+
 void 
 DistributedDiagonalSOE::zeroA(void)
 {
@@ -486,6 +496,17 @@ DistributedDiagonalSOE::getB(void)
     exit(-1);
   }        
   return *vectB;
+}
+
+const Vector&
+DistributedDiagonalSOE::getC(void)		// MSN: for new convergence test
+{
+    if (vectC == 0) {
+        opserr << "FATAL DistributedDiagonalSOE::getC - vectC == 0!";
+        exit(-1);
+    }
+
+    return *vectC;
 }
 
 double 

@@ -449,6 +449,17 @@ BandGenLinSOE::setB(const Vector &v, double fact)
     return 0;
 }
 
+int
+BandGenLinSOE::setC(void)	// MSN: for new convergence test
+{
+	for (int i = 0; i < size; i++) {
+		C[i] = B[i];
+	}
+
+	return 0;
+}
+
+
 
 void 
 BandGenLinSOE::zeroA(void)
@@ -491,6 +502,17 @@ BandGenLinSOE::getB(void)
     }    
 
     return *vectB;
+}
+
+const Vector&
+BandGenLinSOE::getC(void)		// MSN: for new convergence test
+{
+	if (vectC == 0) {
+		opserr << "FATAL BandGenLinSOE::getC - vectC == 0!";
+		exit(-1);
+	}
+
+	return *vectC;
 }
 
 

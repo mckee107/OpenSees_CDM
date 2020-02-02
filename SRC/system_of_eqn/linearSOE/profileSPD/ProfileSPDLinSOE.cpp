@@ -483,6 +483,17 @@ ProfileSPDLinSOE::setB(const Vector &v, double fact)
     return 0;
 }
 
+int
+ProfileSPDLinSOE::setC(void)	// MSN: for new convergence test
+{
+	for (int i = 0; i < size; i++) {
+		C[i] = B[i];
+	}
+
+	return 0;
+}
+
+
 void 
 ProfileSPDLinSOE::zeroA(void)
 {
@@ -534,6 +545,17 @@ ProfileSPDLinSOE::getB(void)
 	exit(-1);
     }        
     return *vectB;
+}
+
+const Vector&
+ProfileSPDLinSOE::getC(void)		// MSN: for new convergence test
+{
+	if (vectC == 0) {
+		opserr << "FATAL ProfileSPDLinSOE::getC - vectC == 0!";
+		exit(-1);
+	}
+
+	return *vectC;
 }
 
 double 

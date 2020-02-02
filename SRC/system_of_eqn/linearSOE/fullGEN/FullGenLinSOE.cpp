@@ -32,7 +32,6 @@
 
 #include <FullGenLinSOE.h>
 #include <stdlib.h>
-
 #include <FullGenLinSolver.h>
 #include <Matrix.h>
 #include <Graph.h>
@@ -48,9 +47,9 @@ using std::nothrow;
 
 FullGenLinSOE::FullGenLinSOE(FullGenLinSolver &theSolvr)
 :LinearSOE(theSolvr, LinSOE_TAGS_FullGenLinSOE),
- size(0), A(0), B(0), X(0), 
- vectX(0), vectB(0), matA(0),
- Asize(0), Bsize(0), 
+size(0), A(0), B(0), X(0), C(0),
+vectX(0), vectB(0), vectC(0), matA(0),
+Asize(0), Bsize(0),
  factored(false)
 {
     theSolvr.setLinearSOE(*this);
@@ -59,10 +58,10 @@ FullGenLinSOE::FullGenLinSOE(FullGenLinSolver &theSolvr)
 
 FullGenLinSOE::FullGenLinSOE(int N, FullGenLinSolver &theSolvr)
 :LinearSOE(theSolvr, LinSOE_TAGS_FullGenLinSOE),
- size(0), A(0), B(0), X(0), 
- vectX(0), vectB(0), matA(0),
- Asize(0), Bsize(0), 
- factored(false)
+size(0), A(0), B(0), X(0), C(0),
+vectX(0), vectB(0), vectC(0), matA(0),
+Asize(0), Bsize(0),
+factored(false)
 {
     size = N;
 
@@ -81,6 +80,7 @@ FullGenLinSOE::FullGenLinSOE(int N, FullGenLinSolver &theSolvr)
     
 	B = new (nothrow) double[size];
 	X = new (nothrow) double[size];
+    C = new (nothrow) double[size];
 	
 	if (B == 0 || X == 0) {
 	    opserr << "WARNING :FullGenLinSOE::FullGenLinSOE :";
@@ -93,12 +93,14 @@ FullGenLinSOE::FullGenLinSOE(int N, FullGenLinSolver &theSolvr)
 	    for (int j=0; j<size; j++) {
 		B[j] = 0;
 		X[j] = 0;
+        C[j] = 0;
 	    }
 	}
     }
 
     vectX = new Vector(X,size);
-    vectB = new Vector(B,size);    
+    vectB = new Vector(B,size); 
+    vectC = new Vector(C, size);
     matA  = new Matrix(A, size, size);
 
     theSolvr.setLinearSOE(*this);
@@ -117,8 +119,10 @@ FullGenLinSOE::~FullGenLinSOE()
     if (A != 0) delete [] A;
     if (B != 0) delete [] B;
     if (X != 0) delete [] X;
+    if (C != 0) delete [] C;
     if (vectX != 0) delete vectX;    
-    if (vectB != 0) delete vectB;        
+    if (vectB != 0) delete vectB;  
+    if (vectC != 0) delete vectC;
     if (matA != 0) delete matA;        
 }
 
@@ -164,10 +168,12 @@ FullGenLinSOE::setSize(Graph &theGraph)
 	// delete the old	
 	if (B != 0) delete [] B;
 	if (X != 0) delete [] X;
+    if (C != 0) delete [] C;
 
 	// create the new
 	B = new (nothrow) double[size];
 	X = new (nothrow) double[size];
+    C = new (nothrow) double[size];
 	
         if (B == 0 || X == 0) {
             opserr << "WARNING FullGenLinSOE::FullGenLinSOE :";
@@ -184,6 +190,7 @@ FullGenLinSOE::setSize(Graph &theGraph)
     for (int j=0; j<Bsize; j++) {
 	B[j] = 0;
 	X[j] = 0;
+    C[j] = 0;
     }
 
     // create new Vectors
@@ -194,11 +201,15 @@ FullGenLinSOE::setSize(Graph &theGraph)
 	if (vectB != 0)
 	    delete vectB;
 
+    if (vectC != 0)
+        delete vectC;
+
 	if (matA != 0)
 	    delete matA;
 	
 	vectX = new Vector(X,Bsize);
-	vectB = new Vector(B,Bsize);	
+	vectB = new Vector(B,Bsize);
+    vectC = new Vector(C, Bsize);
 	matA = new Matrix(A,Bsize, Bsize);	
     }
 
@@ -369,6 +380,16 @@ FullGenLinSOE::setB(const Vector &v, double fact)
     return 0;
 }
 
+int
+FullGenLinSOE::setC(void)	// MSN: for new convergence test
+{
+    for (int i = 0; i < size; i++) {
+        C[i] = B[i];
+    }
+
+    return 0;
+}
+
 void 
 FullGenLinSOE::zeroA(void)
 {
@@ -442,6 +463,17 @@ FullGenLinSOE::getB(void)
 	exit(-1);
     }        
     return *vectB;
+}
+
+const Vector&
+FullGenLinSOE::getC(void)		// MSN: for new convergence test
+{
+    if (vectC == 0) {
+        opserr << "FATAL FullGenLinSOE::getC - vectC == 0!";
+        exit(-1);
+    }
+
+    return *vectC;
 }
 
 const Matrix *

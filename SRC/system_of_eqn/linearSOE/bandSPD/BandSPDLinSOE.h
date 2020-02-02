@@ -61,13 +61,15 @@ class BandSPDLinSOE : public LinearSOE
     virtual int addColA(const Vector &col, int colIndex, double fact = 1.0);
 
     virtual int addB(const Vector &, const ID &, double fact = 1.0);    
-    virtual int setB(const Vector &, double fact = 1.0);        
+    virtual int setB(const Vector &, double fact = 1.0);    
+    virtual int setC(void);		// MSN: for new convergence test
     
     virtual void zeroA(void);
     virtual void zeroB(void);
     
     virtual const Vector &getX(void);
-    virtual const Vector &getB(void);    
+    virtual const Vector &getB(void); 
+    virtual const Vector &getC(void);	// MSN: for new convergence test
     virtual double normRHS(void);
 
     virtual void setX(int loc, double value);    
@@ -84,8 +86,10 @@ class BandSPDLinSOE : public LinearSOE
   protected:
     int size, half_band;    
     double *A, *B, *X;
+    double* C;		// MSN: external nodal forces, for new convergence test
     Vector *vectX;
     Vector *vectB;    
+    Vector* vectC;	// MSN: external nodal forces, for new convergence test
     int Asize, Bsize;
     int aFactored;
     bool factored;

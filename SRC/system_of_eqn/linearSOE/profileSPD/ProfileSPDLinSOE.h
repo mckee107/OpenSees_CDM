@@ -56,6 +56,7 @@ class ProfileSPDLinSOE : public LinearSOE
 
     virtual int addB(const Vector &, const ID &, double fact = 1.0);    
     virtual int setB(const Vector &, double fact = 1.0);
+    virtual int setC(void);		// MSN: for new convergence test
     
     virtual void zeroA(void);
     virtual void zeroB(void);
@@ -65,6 +66,7 @@ class ProfileSPDLinSOE : public LinearSOE
     
     virtual const Vector &getX(void);
     virtual const Vector &getB(void);
+    virtual const Vector& getC(void);	// MSN: for new convergence test
     virtual double normRHS(void);
 
     virtual int setProfileSPDSolver(ProfileSPDLinSolver &newSolver);    
@@ -82,8 +84,10 @@ class ProfileSPDLinSOE : public LinearSOE
   protected:
     int size, profileSize;    
     double *A, *B, *X;
+    double* C;		// MSN: external nodal forces, for new convergence test
     Vector *vectX;
     Vector *vectB;
+    Vector* vectC;	// MSN: external nodal forces, for new convergence test
     int *iDiagLoc;
     int Asize, Bsize;
     bool isAfactored, isAcondensed;

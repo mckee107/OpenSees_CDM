@@ -64,7 +64,9 @@ class LinearSOE : public MovableObject
     
     virtual int addA(const Matrix &, const ID &, double fact = 1.0) =0;
     virtual int addB(const Vector &, const ID &, double fact = 1.0) =0;    
-    virtual int setB(const Vector &, double fact = 1.0) =0;        
+    virtual int setB(const Vector &, double fact = 1.0) =0;  
+    virtual int setC(void) = 0;		// MSN: for new convergence test
+    virtual void setA(const Matrix &a);		// MSN: to be able to change entire tangent
 
     virtual int addA(const Matrix &);
     virtual int addColA(const Vector &col, int colIndex, double fact = 1.0);
@@ -75,8 +77,10 @@ class LinearSOE : public MovableObject
     virtual int formAp(const Vector &p, Vector &Ap);
 
     virtual const Vector &getX(void) = 0;
-    virtual const Vector &getB(void) = 0;    
+    virtual const Vector &getB(void) = 0;  
+    virtual const Vector &getC(void) = 0;	// MSN: for new convergence test
     virtual const Matrix *getA(void) {return 0;};    
+
     virtual double getDeterminant(void);
     virtual double normRHS(void) = 0;
 

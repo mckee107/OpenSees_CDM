@@ -278,6 +278,17 @@ DiagonalSOE::setB(const Vector &v, double fact)
   return 0;
 }
 
+int
+DiagonalSOE::setC(void)	// MSN: for new convergence test
+{
+    for (int i = 0; i < size; i++) {
+        C[i] = B[i];
+    }
+
+    return 0;
+}
+
+
 void 
 DiagonalSOE::zeroA(void)
 {
@@ -339,6 +350,18 @@ DiagonalSOE::getB(void)
   }        
   return *vectB;
 }
+
+const Vector&
+DiagonalSOE::getC(void)		// MSN: for new convergence test
+{
+    if (vectC == 0) {
+        opserr << "FATAL DiagonalSOE::getC - vectC == 0!";
+        exit(-1);
+    }
+
+    return *vectC;
+}
+
 
 double 
 DiagonalSOE::normRHS(void)

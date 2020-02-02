@@ -48,6 +48,7 @@
 #include <CTestEnergyIncr.h>
 #include <CTestRelativeEnergyIncr.h>
 #include <CTestFixedNumIter.h>
+#include <CTestComboNormUnbalance.h>
 
 // graph numbering schemes
 #include <RCM.h>
@@ -1558,6 +1559,9 @@ FEM_ObjectBrokerAllClasses::getNewConvergenceTest(int classTag)
 	     
 	case CONVERGENCE_TEST_CTestFixedNumIter:  
 	     return new CTestFixedNumIter();
+
+	case CONVERGENCE_TEST_CTestComboNormUnbalance:
+		return new CTestComboNormUnbalance();
 	     
 	default:
 	     opserr << "FEM_ObjectBrokerAllClasses::getNewConvergenceTest - ";

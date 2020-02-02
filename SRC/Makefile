@@ -1235,6 +1235,7 @@ ANALYSIS_LIBS = $(FE)/analysis/analysis/Analysis.o \
 	$(FE)/convergenceTest/CTestRelativeTotalNormDispIncr.o \
 	$(FE)/convergenceTest/CTestFixedNumIter.o \
 	$(FE)/convergenceTest/CTestPFEM.o \
+	$(FE)/convergenceTest/CTestComboNormUnbalance.o \
 	$(FE)/analysis/algorithm/domainDecompAlgo/DomainDecompAlgo.o \
 	$(FE)/analysis/integrator/Integrator.o \
 	$(FE)/analysis/integrator/IncrementalIntegrator.o \
