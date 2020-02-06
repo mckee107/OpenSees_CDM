@@ -79,10 +79,10 @@ protected:
 private:
     int size;            // order of A
     Vector X,B;
-    double* C;		// MSN: external nodal forces, for new convergence test
+    Vector C;	// MSN: external nodal forces, for new convergence test
+    //double* C;		// MSN: external nodal forces, for new convergence test
     std::vector<int> Ap, Ai;
     std::vector<double> Ax;
-    Vector* vectC;	// MSN: external nodal forces, for new convergence test
 };
 
 

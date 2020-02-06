@@ -118,6 +118,7 @@ BandSPDLinSOE::BandSPDLinSOE(int N, int numSuper,
 
     vectX = new Vector(X,size);
     vectB = new Vector(B,size);    
+    vectC = new Vector(C, size);	// MSN
     
 
     the_Solver.setLinearSOE(*this);    
@@ -136,7 +137,9 @@ BandSPDLinSOE::~BandSPDLinSOE()
     if (B != 0) delete [] B;
     if (X != 0) delete [] X;
     if (vectX != 0) delete vectX;    
-    if (vectB != 0) delete vectB;        
+    if (vectB != 0) delete vectB;   
+    if (C != 0) delete[] C;			// MSN
+    if (vectC != 0) delete vectC;	// MSN
 }
 
 
@@ -198,10 +201,12 @@ BandSPDLinSOE::setSize(Graph &theGraph)
 	// delete the old	
 	if (B != 0) delete [] B;
 	if (X != 0) delete [] X;
+    if (C != 0) delete[] C;		// MSN
 
 	// create the new
 	B = new (nothrow) double[size];
 	X = new (nothrow) double[size];
+    C = new double[size];		// MSN
 	
         if (B == 0 || X == 0) {
             opserr << "WARNING BandSPDLinSOE::setSize():";
@@ -224,9 +229,12 @@ BandSPDLinSOE::setSize(Graph &theGraph)
 	    delete vectX;
 	if (vectB != 0)
 	    delete vectB;
+    if (vectC != 0)		// MSN
+        delete vectC;
 
 	vectX = new Vector(X,size);	
 	vectB = new Vector(B,size);
+    vectC = new Vector(C, size);	// MSN
 
 	if (size > Bsize)
 	    Bsize = size;

@@ -67,7 +67,7 @@ class BandGenLinSOE : public LinearSOE
 
     virtual const Vector &getX(void);
     virtual const Vector &getB(void);
-    virtual const Vector& getC(void);	// MSN: for new convergence test
+    virtual const Vector &getC(void);	// MSN: for new convergence test
     virtual double normRHS(void);
 
     virtual void setX(int loc, double value);    

@@ -73,6 +73,9 @@ DistributedBandGenLinSOE::~DistributedBandGenLinSOE()
 
   if (myB == 0)
     delete [] myB;
+
+  if (C != 0) delete[] C;			// MSN
+  if (vectC != 0) delete vectC;	// MSN
 }
 
 
@@ -213,6 +216,7 @@ DistributedBandGenLinSOE::setSize(Graph &theGraph)
     if (A != 0) 
       delete [] A;
 
+
     A = new double[newSize];
     
     if (A == 0) {
@@ -240,11 +244,14 @@ DistributedBandGenLinSOE::setSize(Graph &theGraph)
     if (B != 0) delete [] B;
     if (X != 0) delete [] X;
     if (myB != 0) delete [] myB;
+    if (C != 0) delete[] C;		// MSN
+   
     
     // create the new
     B = new double[size];
     X = new double[size];
     myB = new double[size];
+    C = new double[size];		// MSN
     
     if (B == 0 || X == 0 || myB == 0) {
       opserr << "WARNING DistributedBandGenLinSOE::DistributedBandGenLinSOE :";
@@ -274,6 +281,8 @@ DistributedBandGenLinSOE::setSize(Graph &theGraph)
     
     if (myVectB != 0)
       delete myVectB;
+    if (vectC != 0)		// MSN
+        delete vectC;
 
     vectX = new Vector(X,size);
     vectB = new Vector(B,size);

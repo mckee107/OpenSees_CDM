@@ -89,7 +89,7 @@ UmfpackGenLinSOE::setSize(Graph &theGraph)
 	nnz += theAdjacency.Size() +1; // the +1 is for the diag entry
     }
 
-    // resize A, B, X
+    // resize A, B, X, C
     Ap.reserve(size+1);
     Ai.reserve(nnz);
     Ax.resize(nnz,0.0);
@@ -97,6 +97,8 @@ UmfpackGenLinSOE::setSize(Graph &theGraph)
     B.Zero();
     X.resize(size);
     X.Zero();
+	C.resize(size); // CDM: For ComboNormUnbalance 
+	C.Zero();       // CDM: For ComboNormUnbalance 
 
     // fill in Ai and Ap
     Ap.push_back(0);
@@ -328,15 +330,10 @@ UmfpackGenLinSOE::getB(void)
     return B;
 }
 
-const Vector&
+const Vector &
 UmfpackGenLinSOE::getC(void)		// MSN: for new convergence test
-{
-	if (vectC == 0) {
-		opserr << "FATAL UmfpackGenLinSOE::getC - vectC == 0!";
-		exit(-1);
-	}
-
-	return *vectC;
+{									// CDM: for combonormunbalance
+		return C;
 }
 
 double

@@ -105,6 +105,7 @@ BandGenLinSOE::BandGenLinSOE(int N, int numSuperDiag, int numSubDiag,
     
     vectX = new Vector(X,size);
     vectB = new Vector(B,size);
+	vectC = new Vector(C, size);	// MSN
 
     theSolvr.setLinearSOE(*this);        
     
@@ -127,7 +128,9 @@ BandGenLinSOE::~BandGenLinSOE()
     if (B != 0) delete [] B;
     if (X != 0) delete [] X;
     if (vectX != 0) delete vectX;    
-    if (vectB != 0) delete vectB;    
+    if (vectB != 0) delete vectB;  
+	if (C != 0) delete[] C;			// MSN
+	if (vectC != 0) delete vectC;	// MSN
 }
 
 
@@ -195,10 +198,12 @@ BandGenLinSOE::setSize(Graph &theGraph)
 	// delete the old	
 	if (B != 0) delete [] B;
 	if (X != 0) delete [] X;
+	if (C != 0) delete[] C;		// MSN
 
 	// create the new
 	B = new (nothrow) double[size];
 	X = new (nothrow) double[size];
+	C = new double[size];		// MSN
 	
         if (B == 0 || X == 0) {
             opserr << "WARNING BandGenLinSOE::BandGenLinSOE :";
@@ -224,9 +229,13 @@ BandGenLinSOE::setSize(Graph &theGraph)
 
 	if (vectB != 0) 
 	    delete vectB;
+
+	if (vectC != 0)		// MSN
+		delete vectC;
 		
 	vectX = new Vector(X,size);
 	vectB = new Vector(B,size);
+	vectC = new Vector(C, size);	// MSN
     }
     
     // invoke setSize() on the Solver
