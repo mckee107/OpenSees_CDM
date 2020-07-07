@@ -18,21 +18,74 @@
 **                                                                    **
 ** ****************************************************************** */
                                                                         
-// $Revision: 1.2 $
-// $Date: 2003-04-04 16:55:03 $
-// $Source: /usr/local/cvs/OpenSees/SRC/element/nonlinearBeamColumn/matrixutil/MatrixUtil.h,v $
-                                                                        
-                                                                        
-#ifndef MatrixUtil_h
-#define MatrixUtil_h
+#ifndef NodeRecorderRMS_h
+#define NodeRecorderRMS_h
 
+// Written: fmk 
+
+
+#include <Recorder.h>
+#include <ID.h>
+#include <Vector.h>
 #include <Matrix.h>
+#include <TimeSeries.h>
 
-double invert2by2Matrix(const Matrix &a, Matrix &b);
-double invert3by3Matrix(const Matrix &a, Matrix &b);
-void   invertMatrix(int n, const Matrix &a, Matrix &b);
-void   getCBDIinfluenceMatrix(int nIntegrPts, const Matrix &xi_pt, double L, Matrix &ls);
-void   getCBDIinfluenceMatrix(int nIntegrPts, double *pts, double L, Matrix &ls);
-void   getCBDIinfluenceMatrix(int npts, double *pts, int nIntegrPts, double *ipts, double L, Matrix &ls);
+class Domain;
+class FE_Datastore;
+class Node;
+
+class NodeRecorderRMS: public Recorder
+{
+  public:
+    NodeRecorderRMS();
+    NodeRecorderRMS(const ID &theDof, 
+			 const ID *theNodes, 
+			 const char *dataToStore,
+			 Domain &theDomain,
+			 OPS_Stream &theOutputHandler,
+			 double deltaT = 0.0,
+			 TimeSeries **theTimeSeries =0); 
+    
+    ~NodeRecorderRMS();
+
+    int record(int commitTag, double timeStamp);
+    int restart(void);    
+
+    int setDomain(Domain &theDomain);
+    int sendSelf(int commitTag, Channel &theChannel);  
+    int recvSelf(int commitTag, Channel &theChannel, 
+		 FEM_ObjectBroker &theBroker);
+    
+    virtual double getRecordedValue(int clmnId, int rowOffset, bool reset); //added by SAJalali
+
+  protected:
+    
+  private:	
+    int initialize(void);
+
+    ID *theDofs;
+    ID *theNodalTags;
+    Node **theNodes;
+
+    Vector *currentData;
+    Vector *runningTotal;
+    int count;
+
+    Domain *theDomain;
+    OPS_Stream *theHandler;
+
+    int dataFlag; // flag indicating what it is to be stored in recorder
+
+    double deltaT;
+    double nextTimeStampToRecord;
+
+    bool initializationDone;
+    int numValidNodes;
+
+    int addColumnInfo;
+    TimeSeries **theTimeSeries;
+    double *timeSeriesValues;
+
+};
 
 #endif
