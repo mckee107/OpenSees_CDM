@@ -208,6 +208,11 @@ OpenSeesCommands::getDomain()
     return theDomain;
 }
 
+AnalysisModel** OpenSeesCommands::getAnalysisModel()
+{
+    return &theAnalysisModel;
+}
+
 void
 OpenSeesCommands::setSOE(LinearSOE* soe)
 {
@@ -993,6 +998,13 @@ Domain* OPS_GetDomain(void)
 {
     if (cmds == 0) return 0;
     return cmds->getDomain();
+}
+
+AnalysisModel**
+OPS_GetAnalysisModel(void)
+{
+    if (cmds == 0) return 0;
+    return cmds->getAnalysisModel();
 }
 
 int OPS_GetNDF()
@@ -2804,10 +2816,10 @@ int OPS_defaultUnits()
         lb = 0.0000044482216152605;
     }
     else if ((strcmp(force, "kgf") == 0)) {
-        lb = 9.80665*4.4482216152605;
+        lb = 4.4482216152605 / 9.80665;
     }
     else if ((strcmp(force, "tonf") == 0)) {
-        lb = 9.80665 / 1000.0*4.4482216152605;
+        lb = 4.4482216152605 / 9.80665 / 1000.0;
     }
     else {
         lb = 1.0;
