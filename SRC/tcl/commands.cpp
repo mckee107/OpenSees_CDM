@@ -352,7 +352,7 @@ extern void OPS_ResponseSpectrumAnalysis(void);
 // graph
 #include <RCM.h>
 #include <AMDNumberer.h>
-
+//#include <Metis.h>
 #include <ErrorHandler.h>
 #include <ConsoleErrorHandler.h>
 
@@ -1764,7 +1764,7 @@ partitionModel(int eleTag)
   // create a partitioner & partition the domain
   if (OPS_DOMAIN_PARTITIONER == 0) {
     //      OPS_BALANCER = new ShedHeaviest();
-    OPS_GRAPH_PARTITIONER  = new Metis;
+    //OPS_GRAPH_PARTITIONER  = new Metis;
     //OPS_DOMAIN_PARTITIONER = new DomainPartitioner(*OPS_GRAPH_PARTITIONER, *OPS_BALANCER);
     OPS_DOMAIN_PARTITIONER = new DomainPartitioner(*OPS_GRAPH_PARTITIONER);
     theDomain.setPartitioner(OPS_DOMAIN_PARTITIONER);

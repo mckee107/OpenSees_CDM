@@ -1,0 +1,189 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.MSVC.Toolset.Common.props(21,5): warning MSB4211: The property "IntDir" is being set to a value for the first time, but it was already consumed at "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Platforms\x64\ImportBefore\Default\Intel.Cpp.x64.default.props (94,5)".
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(37,5): warning MSB4211: The property "IntermediateOutputPath" is being set to a value for the first time, but it was already consumed at "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (36,5)".
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(340,5): warning MSB4211: The property "CleanFile" is being set to a value for the first time, but it was already consumed at "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets (36,5)".
+  balance.c
+  bucketsort.c
+  ccgraph.c
+  coarsen.c
+  compress.c
+  debug.c
+  estmem.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\estmem.c(50,45): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+  fm.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\fm.c(44,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  fortran.c
+  frename.c
+  graph.c
+  initpart.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(104,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(105,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(106,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(107,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(231,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(232,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(233,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(234,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(368,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(369,34): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(370,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\initpart.c(371,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  kmetis.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kmetis.c(70,91): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kmetis.c(79,79): warning C4305: 'function': truncation from 'double' to 'float'
+  kvmetis.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kvmetis.c(70,91): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kvmetis.c(79,81): warning C4305: 'function': truncation from 'double' to 'float'
+  kwayfm.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(47,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(48,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(49,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(251,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(252,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(253,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(481,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(482,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayfm.c(483,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+  kwayrefine.c
+  kwayvolfm.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(52,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(53,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(54,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(203,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(204,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(205,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(438,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(439,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(440,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(599,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(600,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(601,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(1430,38): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\kwayvolfm.c(1688,44): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+  kwayvolrefine.c
+  match.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\match.c(205,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  mbalance.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mbalance.c(64,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  mbalance2.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mbalance2.c(66,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  mcoarsen.c
+  memory.c
+  mesh.c
+  meshpart.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\meshpart.c(61,33): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\meshpart.c(164,33): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  mfm.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mfm.c(48,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  mfm2.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mfm2.c(49,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  mincover.c
+  minitpart.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\minitpart.c(81,45): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\minitpart.c(142,45): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\minitpart.c(144,45): warning C4305: 'function': truncation from 'double' to 'float'
+  minitpart2.c
+  mkmetis.c
+  mkwayfmh.c
+  mkwayrefine.c
+  mmatch.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mmatch.c(162,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mmatch.c(256,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mmatch.c(357,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  mmd.c
+  mpmetis.c
+  mrefine.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mrefine.c(39,49): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mrefine.c(43,49): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\mrefine.c(60,43): warning C4305: 'function': truncation from 'double' to 'float'
+  mrefine2.c
+  mutil.c
+  myqsort.c
+  Generating Code...
+  Compiling...
+  ometis.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(52,65): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(61,72): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(152,70): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(156,76): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(158,74): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(237,65): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(246,72): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\ometis.c(488,62): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  parmetis.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(71,91): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(80,79): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(157,70): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(217,40): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(219,20): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(296,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(308,58): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(355,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(367,50): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\parmetis.c(368,49): warning C4305: 'function': truncation from 'double' to 'float'
+  pmetis.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\pmetis.c(73,65): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\pmetis.c(118,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  pqueue.c
+  refine.c
+  separator.c
+  sfm.c
+  srefine.c
+  stat.c
+  subdomains.c
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(58,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(59,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(60,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(349,33): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(350,41): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(351,47): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(753,38): warning C4244: '=': conversion from 'double' to 'idxtype', possible loss of data
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\OTHER\METIS\subdomains.c(1112,44): warning C4244: '=': conversion from 'float' to 'idxtype', possible loss of data
+  timing.c
+  util.c
+  Generating Code...
+  Actor.cpp
+  MovableObject.cpp
+  MPI_ChannelAddress.cpp
+  Channel.cpp
+  HTTP.cpp
+  MPI_Channel.cpp
+  Socket.cpp
+  TCP_Socket.cpp
+  MachineBroker.cpp
+  MPI_MachineBroker.cpp
+  Message.cpp
+  FEM_ObjectBroker.cpp
+  FEM_ObjectBrokerAllClasses.cpp
+  ObjectBroker.cpp
+  Shadow.cpp
+  StaticDomainDecompositionAnalysis.cpp
+  TransientDomainDecompositionAnalysis.cpp
+  DistributedDisplacementControl.cpp
+  ParallelNumberer.cpp
+  PartitionedDomain.cpp
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\SRC\domain\domain\partitioned\PartitionedDomain.cpp(1405,22): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  PartitionedDomainEleIter.cpp
+  PartitionedDomainSubIter.cpp
+  LoadBalancer.cpp
+  ShedHeaviest.cpp
+  DomainPartitioner.cpp
+C:\Users\codim\Documents\GitHub\OpenSees_CDM\SRC\domain\partitioner\DomainPartitioner.cpp(608,8): warning C4804: '<': unsafe use of type 'bool' in operation
+  ActorSubdomain.cpp
+  ShadowSubdomain.cpp
+  Metis.cpp
+  MumpsParallelSOE.cpp
+  MumpsParallelSolver.cpp
+  MumpsSOE.cpp
+  MumpsSolver.cpp
+  DistributedProfileSPDLinSOE.cpp
+  DistributedSparseGenColLinSOE.cpp
+  DistributedSparseGenRowLinSOE.cpp
+  DistributedSparseGenRowLinSolver.cpp
+  DistributedSuperLU.cpp
+  Generating Code...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1523,5): warning MSB8012: TargetPath(C:\Users\codim\Documents\GitHub\OpenSees_CDM\Win64\x64\Debug\parallel.lib) does not match the Library's OutputFile property value (C:\Users\codim\Documents\GitHub\OpenSees_CDM\Win64\lib\debug\parallel.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  parallel.vcxproj -> C:\Users\codim\Documents\GitHub\OpenSees_CDM\Win64\x64\Debug\parallel.lib

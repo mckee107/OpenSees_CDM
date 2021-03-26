@@ -154,7 +154,7 @@ extern void g3TclMain(int argc, char **argv, Tcl_AppInitProc *appInitProc, int r
 #include <ShadowSubdomain.h>
 #include <ActorSubdomain.h>
 #include <FEM_ObjectBrokerAllClasses.h>
-
+#include <iostream>
 #include <DomainPartitioner.h>
 
 extern PartitionedDomain theDomain;
@@ -180,10 +180,25 @@ extern int OPS_rank;
 extern int OPS_np;
 
 #include <mpi.h>
-
+using namespace std;
 int
 main(int argc, char **argv)
 {
+    /*
+    int rank, size, temp;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    if (rank == 0)
+    {
+        cout << "Please input number: ";
+        cin >> temp;
+    }
+
+  MPI_Barrier(MPI_COMM_WORLD); */
+  
+
   theMachineBroker = new MPI_MachineBroker(0, argc, argv);
   FEM_ObjectBrokerAllClasses theBroker;
   theMachineBroker->setObjectBroker(&theBroker);

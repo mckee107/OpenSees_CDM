@@ -5,9 +5,17 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -20,7 +28,19 @@
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
@@ -32,7 +52,13 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -45,16 +71,24 @@
     <LinkIncremental>false</LinkIncremental>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\..\..\bin\</OutDir>
     <IntDir>.\..\..\obj\openseessp\debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\..\..\src\material\uniaxial\backbone;..\..\..\src\recorder\response;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\OTHER\MUMPS_4.7.3\include;..\..\..\src\system_of_eqn\linearSOE\mumps;..\..\..\src\reliability\analysis\telm;..\..\..\src\domain\partitioner;..\..\..\src\domain\loadBalancer;..\..\..\src\reliability\optimization;..\..\..\src\graph\partitioner;..\..\..\OTHER\SuperLU_DIST_2.0\SRC;..\..\..\src\actor\message;c:\Program Files\MPICH2\include;..\..\..\src\actor\channel;..\..\..\src\actor\shadow;..\..\..\src\domain\subdomain;..\..\..\src\domain\domain\partitioned;..\..\..\src\actor\machineBroker;..\..\..\src\package;..\..\..\src\analysis\fe_ele%3b..\..\..\src\analysis\dof_grp%3b..\..\..\SRC\package%3b..\..\..\src\packages%3b..\..\..\src\domain\domain\partitioned%3b..\..\..\src\actor\address%3b..\..\..\src\actor\message%3b..\..\..\src\actor\channel%3b..\..\..\src\domain\subdomain%3b..\..\..\src\actor\shadow%3b..\..\..\src\actor\machineBroker%3bc:\Program Files\MPICH2\include;..\..\..\src\system_of_eqn\linearSOE\diagonal;c:\Program Files\tcl\include;..\..\..\src\damage;..\..\..\src\material\uniaxial\py;..\..\..\src\reliability\fesensitivity;..\..\..\src\reliability\tcl;..\..\..\src\coordTransformation;..\..\..\src\material\section\repres\section;..\..\..\src\analysis\algorithm\equiSolnAlgo;..\..\..\src\system_of_eqn\eigenSOE;..\..\..\src\analysis\algorithm\eigenAlgo;..\..\..\src\material\nD;..\..\..\src\material\uniaxial;..\..\..\src\handler;..\..\..\src\tcl;..\..\..\src\actor\objectBroker;..\..\..\src\system_of_eqn\linearSOE\umfGEN;..\..\..\src\system_of_eqn\linearSOE\fullGEN;..\..\..\src\system_of_eqn\linearSOE\sparseGEN;..\..\..\src\system_of_eqn\linearSOE\bandSPD;..\..\..\src\system_of_eqn\linearSOE\bandGEN;..\..\..\src\element\nonlinearBeamColumn\tcl\repres\section;..\..\..\src\matrix;..\..\..\src\recorder;..\..\..\src\graph\numberer;..\..\..\src\material\section;..\..\..\src\graph\graph;..\..\..\src\element\beam2d;..\..\..\src\element\beam3d;..\..\..\src\system_of_eqn;..\..\..\src\system_of_eqn\linearSOE;..\..\..\src\system_of_eqn\linearSOE\profileSPD;..\..\..\src\system_of_eqn\linearSOE\sparseSYM;..\..\..\src\domain\pattern;..\..\..\src\analysis\analysis;..\..\..\src\analysis\integrator;..\..\..\src\analysis\numberer;..\..\..\src\analysis\handler;..\..\..\src\renderer;..\..\..\src\material;..\..\..\src\analysis\algorithm;..\..\..\src\convergenceTest;..\..\..\src\analysis\model\simple;..\..\..\src\domain\load;..\..\..\src\analysis\model;..\..\..\src\element\truss;..\..\..\src\utility;..\..\..\src\actor\actor;..\..\..\src\modelbuilder;..\..\..\src\modelbuilder\tcl;..\..\..\src\domain\constraints;..\..\..\src\domain\component;..\..\..\src\element;..\..\..\src\domain\node;..\..\..\src\domain\domain;..\..\..\src\tagged\storage;..\..\..\src;..\..\..\src\tagged;..\..\..\src\reliability\domain;..\..\..\src\reliability\domain\components;..\..\..\src\reliability\domain\distributions;..\..\..\src\reliability\analysis;..\..\..\src\reliability\analysis\analysis;..\..\..\src\reliability\analysis\curvature;..\..\..\src\reliability\analysis\designPoint;..\..\..\src\reliability\analysis\direction;..\..\..\src\reliability\analysis\gFunction;..\..\..\src\reliability\analysis\misc;..\..\..\src\reliability\analysis\randomNumber;..\..\..\src\reliability\analysis\sensitivity;..\..\..\src\reliability\analysis\stepSize;..\..\..\src\reliability\analysis\transformation;..\..\..\src\nDarray;..\..\..\src\system_of_eqn\linearSOE\cg;..\..\..\src\system_of_eqn\linearSOE\itpack;..\..\..\other\SuperLU_3.0\SRC;..\..\..\src\database;..\..\..\src\element\updatedLagrangianBeamColumn;..\..\..\src\material\yieldSurface\yieldSurfaceBC;..\..\..\src\material\yieldSurface\evolution;..\..\..\src\material\yieldSurface\plasticHardeningMaterial;..\..\..\src\reliability\domain\modulatingFunction;..\..\..\src\reliability\domain\spectrum;..\..\..\src\reliability\domain\filter;..\..\..\src\reliability\analysis\hessianApproximation;..\..\..\src\reliability\analysis\convergenceCheck;..\..\..\src\reliability\analysis\meritFunction;..\..\..\src\reliability\analysis\rootFinding;c:\Program Files\Tcl\include;c:\Program Files\tcl;%(AdditionalIncludeDirectories);..\..\..\src\material\uniaxial\limitState\limitCurve;..\..\..\src\element\frictionBearing;..\..\..\src\element\frictionBearing\frictionModel;..\..\..\src\material\uniaxial\stiffness;..\..\..\src\material\uniaxial\strength;..\..\..\src\material\uniaxial\unloading;..\..\..\src\element\forceBeamColumn;..\..\..\src\api</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\src\material\uniaxial\backbone;..\..\..\src\recorder\response;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\OTHER\MUMPS_4.7.3\include;..\..\..\src\system_of_eqn\linearSOE\mumps;..\..\..\src\reliability\analysis\telm;..\..\..\src\domain\partitioner;..\..\..\src\domain\loadBalancer;..\..\..\src\reliability\optimization;..\..\..\src\graph\partitioner;..\..\..\OTHER\SuperLU_DIST_2.0\SRC;..\..\..\src\actor\message;c:\Program Files\MPICH2\include;..\..\..\src\actor\channel;..\..\..\src\actor\shadow;..\..\..\src\domain\subdomain;..\..\..\src\domain\domain\partitioned;..\..\..\src\actor\machineBroker;..\..\..\src\package;..\..\..\src\analysis\fe_ele%3b..\..\..\src\analysis\dof_grp%3b..\..\..\SRC\package%3b..\..\..\src\packages%3b..\..\..\src\domain\domain\partitioned%3b..\..\..\src\actor\address%3b..\..\..\src\actor\message%3b..\..\..\src\actor\channel%3b..\..\..\src\domain\subdomain%3b..\..\..\src\actor\shadow%3b..\..\..\src\actor\machineBroker%3bc:\Program Files\MPICH2\include;..\..\..\src\system_of_eqn\linearSOE\diagonal;c:\Program Files\tcl\include;..\..\..\src\damage;..\..\..\src\material\uniaxial\py;..\..\..\src\reliability\fesensitivity;..\..\..\src\reliability\tcl;..\..\..\src\coordTransformation;..\..\..\src\material\section\repres\section;..\..\..\src\analysis\algorithm\equiSolnAlgo;..\..\..\src\system_of_eqn\eigenSOE;..\..\..\src\analysis\algorithm\eigenAlgo;..\..\..\src\material\nD;..\..\..\src\material\uniaxial;..\..\..\src\handler;..\..\..\src\tcl;..\..\..\src\actor\objectBroker;..\..\..\src\system_of_eqn\linearSOE\umfGEN;..\..\..\src\system_of_eqn\linearSOE\fullGEN;..\..\..\src\system_of_eqn\linearSOE\sparseGEN;..\..\..\src\system_of_eqn\linearSOE\bandSPD;..\..\..\src\system_of_eqn\linearSOE\bandGEN;..\..\..\src\element\nonlinearBeamColumn\tcl\repres\section;..\..\..\src\matrix;..\..\..\src\recorder;..\..\..\src\graph\numberer;..\..\..\src\material\section;..\..\..\src\graph\graph;..\..\..\src\element\beam2d;..\..\..\src\element\beam3d;..\..\..\src\system_of_eqn;..\..\..\src\system_of_eqn\linearSOE;..\..\..\src\system_of_eqn\linearSOE\profileSPD;..\..\..\src\system_of_eqn\linearSOE\sparseSYM;..\..\..\src\domain\pattern;..\..\..\src\analysis\analysis;..\..\..\src\analysis\integrator;..\..\..\src\analysis\numberer;..\..\..\src\analysis\handler;..\..\..\src\renderer;..\..\..\src\material;..\..\..\src\analysis\algorithm;..\..\..\src\convergenceTest;..\..\..\src\analysis\model\simple;..\..\..\src\domain\load;..\..\..\src\analysis\model;..\..\..\src\element\truss;..\..\..\src\utility;..\..\..\src\actor\actor;..\..\..\src\modelbuilder;..\..\..\src\modelbuilder\tcl;..\..\..\src\domain\constraints;..\..\..\src\domain\component;..\..\..\src\element;..\..\..\src\domain\node;..\..\..\src\domain\domain;..\..\..\src\tagged\storage;..\..\..\src;..\..\..\src\tagged;..\..\..\src\reliability\domain;..\..\..\src\reliability\domain\components;..\..\..\src\reliability\domain\distributions;..\..\..\src\reliability\analysis;..\..\..\src\reliability\analysis\analysis;..\..\..\src\reliability\analysis\curvature;..\..\..\src\reliability\analysis\designPoint;..\..\..\src\reliability\analysis\direction;..\..\..\src\reliability\analysis\gFunction;..\..\..\src\reliability\analysis\misc;..\..\..\src\reliability\analysis\randomNumber;..\..\..\src\reliability\analysis\sensitivity;..\..\..\src\reliability\analysis\stepSize;..\..\..\src\reliability\analysis\transformation;..\..\..\src\nDarray;..\..\..\src\system_of_eqn\linearSOE\cg;..\..\..\src\system_of_eqn\linearSOE\itpack;..\..\..\other\SuperLU_3.0\SRC;..\..\..\src\database;..\..\..\src\element\updatedLagrangianBeamColumn;..\..\..\src\material\yieldSurface\yieldSurfaceBC;..\..\..\src\material\yieldSurface\evolution;..\..\..\src\material\yieldSurface\plasticHardeningMaterial;..\..\..\src\reliability\domain\modulatingFunction;..\..\..\src\reliability\domain\spectrum;..\..\..\src\reliability\domain\filter;..\..\..\src\reliability\analysis\hessianApproximation;..\..\..\src\reliability\analysis\convergenceCheck;..\..\..\src\reliability\analysis\meritFunction;..\..\..\src\reliability\analysis\rootFinding;c:\Program Files\Tcl\include;c:\Program Files\tcl;%(AdditionalIncludeDirectories);..\..\..\src\material\uniaxial\limitState\limitCurve;..\..\..\src\element\frictionBearing;..\..\..\src\element\frictionBearing\frictionModel;..\..\..\src\material\uniaxial\stiffness;..\..\..\src\material\uniaxial\strength;..\..\..\src\material\uniaxial\unloading;..\..\..\src\element\forceBeamColumn;..\..\..\src\api;C:\Program Files (x86)\Microsoft SDKs\MPI\Include;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\OTHER\CSPARSE;..\..\..\OTHER\SuperLU_5.1.1\SRC;..\..\..\src\reliability\domain\performanceFunction;..\..\..\src\optimization\domain\component;..\..\..\src\optimization\domain;..\..\..\src\optimization\tcl;..\..\..\src\optimization\SNOPT</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;_WGL;_RELIABILITY;_WIN32;_FORTRAN;WIN32;_CONSOLE;BUILD_tcl;_TCL85;_MUMPS;_PARALLEL_PROCESSING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -69,10 +103,42 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>mpi.lib;fmpich2.lib;blacsCinit_MPI-Win32.lib;blacs_MPI-Win32.lib;scalapack.lib;scalapackd.lib;mumps.lib;mumpsFortran.lib;parallel.lib;distributedSuperLU.lib;handler.lib;wsock32.lib;OpenGL32.lib;glu32.lib;GlAux.lib;damage.lib;fedeas.lib;drain.lib;reliability.lib;database.lib;renderer.lib;blas.lib;lapack.lib;feap.lib;arpack.lib;umfpack.lib;analysis.lib;cblas.lib;convergence.lib;domain.lib;element.lib;graph.lib;material.lib;matrix.lib;modelbuilder.lib;recorder.lib;superLU.lib;system.lib;tagged.lib;utility.lib;tcl85.lib;tk85.lib;libm.lib;IFCONSOL.lib;LIBIFCORE.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>msmpi.lib;fmpich2.lib;blacsCinit_MPI-Win32.lib;blacs_MPI-Win32.lib;scalapack.lib;scalapackd.lib;mumps.lib;mumpsFortran.lib;parallel.lib;distributedSuperLU.lib;handler.lib;wsock32.lib;OpenGL32.lib;glu32.lib;damage.lib;fedeas.lib;drain.lib;reliability.lib;database.lib;renderer.lib;blas.lib;lapack.lib;feap.lib;arpack.lib;umfpack.lib;analysis.lib;cblas.lib;convergence.lib;domain.lib;element.lib;graph.lib;material.lib;matrix.lib;modelbuilder.lib;recorder.lib;superLU.lib;system.lib;tagged.lib;utility.lib;tcl86t.lib;tk86t.lib;libmmt.lib;IFCONSOL.lib;libifcoremt.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\..\..\bin/OpenSeesSP.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>c:\Program Files\MPICH2\lib;c:\program Files\tcl\lib;..\..\lib\release;..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>c:\Program Files\MPICH2\lib;c:\program Files\tcl\lib;..\..\lib\release;..\..\lib;%(AdditionalLibraryDirectories);C:\Program Files (x86)\Microsoft SDKs\MPI\Include;c:\libx64</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Midl>
+      <TypeLibraryName>.\..\..\bin/openSees.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\..\src\material\uniaxial\backbone;..\..\..\src\recorder\response;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\OTHER\MUMPS_4.7.3\include;..\..\..\src\system_of_eqn\linearSOE\mumps;..\..\..\src\reliability\analysis\telm;..\..\..\src\domain\partitioner;..\..\..\src\domain\loadBalancer;..\..\..\src\reliability\optimization;..\..\..\src\graph\partitioner;..\..\..\OTHER\SuperLU_DIST_2.0\SRC;..\..\..\src\actor\message;c:\Program Files\MPICH2\include;..\..\..\src\actor\channel;..\..\..\src\actor\shadow;..\..\..\src\domain\subdomain;..\..\..\src\domain\domain\partitioned;..\..\..\src\actor\machineBroker;..\..\..\src\package;..\..\..\src\analysis\fe_ele%3b..\..\..\src\analysis\dof_grp%3b..\..\..\SRC\package%3b..\..\..\src\packages%3b..\..\..\src\domain\domain\partitioned%3b..\..\..\src\actor\address%3b..\..\..\src\actor\message%3b..\..\..\src\actor\channel%3b..\..\..\src\domain\subdomain%3b..\..\..\src\actor\shadow%3b..\..\..\src\actor\machineBroker%3bc:\Program Files\MPICH2\include;..\..\..\src\system_of_eqn\linearSOE\diagonal;c:\Program Files\tcl\include;..\..\..\src\damage;..\..\..\src\material\uniaxial\py;..\..\..\src\reliability\fesensitivity;..\..\..\src\reliability\tcl;..\..\..\src\coordTransformation;..\..\..\src\material\section\repres\section;..\..\..\src\analysis\algorithm\equiSolnAlgo;..\..\..\src\system_of_eqn\eigenSOE;..\..\..\src\analysis\algorithm\eigenAlgo;..\..\..\src\material\nD;..\..\..\src\material\uniaxial;..\..\..\src\handler;..\..\..\src\tcl;..\..\..\src\actor\objectBroker;..\..\..\src\system_of_eqn\linearSOE\umfGEN;..\..\..\src\system_of_eqn\linearSOE\fullGEN;..\..\..\src\system_of_eqn\linearSOE\sparseGEN;..\..\..\src\system_of_eqn\linearSOE\bandSPD;..\..\..\src\system_of_eqn\linearSOE\bandGEN;..\..\..\src\element\nonlinearBeamColumn\tcl\repres\section;..\..\..\src\matrix;..\..\..\src\recorder;..\..\..\src\graph\numberer;..\..\..\src\material\section;..\..\..\src\graph\graph;..\..\..\src\element\beam2d;..\..\..\src\element\beam3d;..\..\..\src\system_of_eqn;..\..\..\src\system_of_eqn\linearSOE;..\..\..\src\system_of_eqn\linearSOE\profileSPD;..\..\..\src\system_of_eqn\linearSOE\sparseSYM;..\..\..\src\domain\pattern;..\..\..\src\analysis\analysis;..\..\..\src\analysis\integrator;..\..\..\src\analysis\numberer;..\..\..\src\analysis\handler;..\..\..\src\renderer;..\..\..\src\material;..\..\..\src\analysis\algorithm;..\..\..\src\convergenceTest;..\..\..\src\analysis\model\simple;..\..\..\src\domain\load;..\..\..\src\analysis\model;..\..\..\src\element\truss;..\..\..\src\utility;..\..\..\src\actor\actor;..\..\..\src\modelbuilder;..\..\..\src\modelbuilder\tcl;..\..\..\src\domain\constraints;..\..\..\src\domain\component;..\..\..\src\element;..\..\..\src\domain\node;..\..\..\src\domain\domain;..\..\..\src\tagged\storage;..\..\..\src;..\..\..\src\tagged;..\..\..\src\reliability\domain;..\..\..\src\reliability\domain\components;..\..\..\src\reliability\domain\distributions;..\..\..\src\reliability\analysis;..\..\..\src\reliability\analysis\analysis;..\..\..\src\reliability\analysis\curvature;..\..\..\src\reliability\analysis\designPoint;..\..\..\src\reliability\analysis\direction;..\..\..\src\reliability\analysis\gFunction;..\..\..\src\reliability\analysis\misc;..\..\..\src\reliability\analysis\randomNumber;..\..\..\src\reliability\analysis\sensitivity;..\..\..\src\reliability\analysis\stepSize;..\..\..\src\reliability\analysis\transformation;..\..\..\src\nDarray;..\..\..\src\system_of_eqn\linearSOE\cg;..\..\..\src\system_of_eqn\linearSOE\itpack;..\..\..\other\SuperLU_3.0\SRC;..\..\..\src\database;..\..\..\src\element\updatedLagrangianBeamColumn;..\..\..\src\material\yieldSurface\yieldSurfaceBC;..\..\..\src\material\yieldSurface\evolution;..\..\..\src\material\yieldSurface\plasticHardeningMaterial;..\..\..\src\reliability\domain\modulatingFunction;..\..\..\src\reliability\domain\spectrum;..\..\..\src\reliability\domain\filter;..\..\..\src\reliability\analysis\hessianApproximation;..\..\..\src\reliability\analysis\convergenceCheck;..\..\..\src\reliability\analysis\meritFunction;..\..\..\src\reliability\analysis\rootFinding;c:\Program Files\Tcl\include;c:\Program Files\tcl;%(AdditionalIncludeDirectories);..\..\..\src\material\uniaxial\limitState\limitCurve;..\..\..\src\element\frictionBearing;..\..\..\src\element\frictionBearing\frictionModel;..\..\..\src\material\uniaxial\stiffness;..\..\..\src\material\uniaxial\strength;..\..\..\src\material\uniaxial\unloading;..\..\..\src\element\forceBeamColumn;..\..\..\src\api;C:\Program Files (x86)\Microsoft SDKs\MPI\Include;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\OTHER\CSPARSE;..\..\..\OTHER\SuperLU_5.1.1\SRC;..\..\..\src\reliability\domain\performanceFunction;..\..\..\src\optimization\domain\component;..\..\..\src\optimization\domain;..\..\..\src\optimization\tcl;..\..\..\src\optimization\SNOPT;..\..\..\src\analysis\dof_grp;..\..\..\src\OTHER\MUMPS_5.3.5;..\..\..\src\OTHER\MUMPS_5.3.5\src;..\..\..\src\OTHER\MUMPS_5.3.5\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WGL;_RELIABILITY;_WIN32;_FORTRAN;WIN32;_CONSOLE;BUILD_tcl;_TCL85;_MUMPS;_PARALLEL_PROCESSING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\..\..\obj\openseesSP\release/openSees.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\..\obj\openseesSP\release/</AssemblerListingLocation>
+      <ObjectFileName>.\..\..\obj\openseesSP\release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\..\obj\openseesSP\release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>msmpi.lib;fmpich2.lib;blacsCinit_MPI-Win32.lib;blacs_MPI-Win32.lib;scalapack.lib;scalapackd.lib;mumps.lib;mumpsFortran.lib;parallel.lib;distributedSuperLU.lib;handler.lib;wsock32.lib;OpenGL32.lib;glu32.lib;damage.lib;fedeas.lib;drain.lib;reliability.lib;database.lib;renderer.lib;blas.lib;lapack.lib;feap.lib;arpack.lib;umfpack.lib;analysis.lib;cblas.lib;convergence.lib;domain.lib;element.lib;graph.lib;material.lib;matrix.lib;modelbuilder.lib;recorder.lib;superLU.lib;system.lib;tagged.lib;utility.lib;tcl86t.lib;tk86t.lib;libmmt.lib;IFCONSOL.lib;libifcoremt.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\..\..\bin/OpenSeesSP.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>c:\Program Files\MPICH2\lib;c:\program Files\tcl\lib;..\..\lib\release;..\..\lib;%(AdditionalLibraryDirectories);C:\Program Files (x86)\Microsoft SDKs\MPI\Include;c:\libx64</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
     <Midl>
@@ -86,7 +152,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\src\material\uniaxial\backbone;..\..\..\OTHER\MUMPS_4.7.3\include;..\..\..\src\system_of_eqn\linearSOE\mumps;..\..\..\src\reliability\analysis\telm;..\..\..\src\domain\partitioner;..\..\..\src\domain\loadBalancer;..\..\..\SRC\reliability\optimization;..\..\..\src\graph\partitioner;..\..\..\OTHER\SuperLU_DIST_2.0\SRC;..\..\..\src\actor\shadow;..\..\..\src\domain\subdomain;c:\Program Files\MPICH2\include;..\..\..\SRC\domain\domain\partitioned;..\..\..\src\analysis\dof_grp;..\..\..\src\analysis\fe_ele;..\..\..\src\package;..\..\..\src\actor\message;..\..\..\src\actor\actor;..\..\..\src\actor\channel;..\..\..\src\actor\machineBroker;..\..\..\SRC\actor\address;..\..\..\src\system_of_eqn\linearSOE\diagonal;c:\Program Files\tcl\include;..\..\..\src\damage;..\..\..\src\material\uniaxial\py;..\..\..\src\reliability\fesensitivity;..\..\..\src\reliability\tcl;..\..\..\src\coordTransformation;..\..\..\src\material\section\repres\section;..\..\..\src\analysis\algorithm\equiSolnAlgo;..\..\..\src\system_of_eqn\eigenSOE;..\..\..\src\analysis\algorithm\eigenAlgo;..\..\..\src\material\nD;..\..\..\src\material\uniaxial;..\..\..\src\handler;..\..\..\src\tcl;..\..\..\src\actor\objectBroker;..\..\..\src\system_of_eqn\linearSOE\umfGEN;..\..\..\src\system_of_eqn\linearSOE\fullGEN;..\..\..\src\system_of_eqn\linearSOE\sparseGEN;..\..\..\src\system_of_eqn\linearSOE\bandSPD;..\..\..\src\system_of_eqn\linearSOE\bandGEN;..\..\..\src\element\nonlinearBeamColumn\tcl\repres\section;..\..\..\src\matrix;..\..\..\src\recorder;..\..\..\src\graph\numberer;..\..\..\src\material\section;..\..\..\src\graph\graph;..\..\..\src\element\beam2d;..\..\..\src\element\beam3d;..\..\..\src\system_of_eqn;..\..\..\src\system_of_eqn\linearSOE;..\..\..\src\system_of_eqn\linearSOE\profileSPD;..\..\..\src\system_of_eqn\linearSOE\sparseSYM;..\..\..\src\domain\pattern;..\..\..\src\analysis\analysis;..\..\..\src\analysis\integrator;..\..\..\src\analysis\numberer;..\..\..\src\analysis\handler;..\..\..\src\renderer;..\..\..\src\material;..\..\..\src\analysis\algorithm;..\..\..\src\convergenceTest;..\..\..\src\analysis\model\simple;..\..\..\src\domain\load;..\..\..\src\analysis\model;..\..\..\src\element\truss;..\..\..\src\utility;..\..\..\src\modelbuilder;..\..\..\src\modelbuilder\tcl;..\..\..\src\domain\constraints;..\..\..\src\domain\component;..\..\..\src\element;..\..\..\src\domain\node;..\..\..\src\domain\domain;..\..\..\src\tagged\storage;..\..\..\src;..\..\..\src\tagged;..\..\..\src\reliability\domain;..\..\..\src\reliability\domain\components;..\..\..\src\reliability\domain\distributions;..\..\..\src\reliability\analysis;..\..\..\src\reliability\analysis\analysis;..\..\..\src\reliability\analysis\curvature;..\..\..\src\reliability\analysis\designPoint;..\..\..\src\reliability\analysis\direction;..\..\..\src\reliability\analysis\gFunction;..\..\..\src\reliability\analysis\misc;..\..\..\src\reliability\analysis\randomNumber;..\..\..\src\reliability\analysis\sensitivity;..\..\..\src\reliability\analysis\stepSize;..\..\..\src\reliability\analysis\transformation;..\..\..\src\nDarray;..\..\..\src\system_of_eqn\linearSOE\cg;..\..\..\src\system_of_eqn\linearSOE\itpack;..\..\..\other\SuperLU_3.0\SRC;..\..\..\src\database;..\..\..\src\element\updatedLagrangianBeamColumn;..\..\..\src\material\yieldSurface\yieldSurfaceBC;..\..\..\src\material\yieldSurface\evolution;..\..\..\src\material\yieldSurface\plasticHardeningMaterial;..\..\..\src\reliability\domain\modulatingFunction;..\..\..\src\reliability\domain\spectrum;..\..\..\src\reliability\domain\filter;..\..\..\src\reliability\analysis\hessianApproximation;..\..\..\src\reliability\analysis\convergenceCheck;..\..\..\src\reliability\analysis\meritFunction;..\..\..\src\reliability\analysis\rootFinding;c:\Program Files\Tcl\include;c:\Program Files\tcl;%(AdditionalIncludeDirectories);..\..\..\src\material\uniaxial\limitState\limitCurve;..\..\..\src\recorder\response;..\..\..\src\element\frictionBearing\frictionModel;..\..\..\src\material\uniaxial\stiffness;..\..\..\src\material\uniaxial\strength;..\..\..\src\material\uniaxial\unloading;..\..\..\src\element\forceBeamColumn;..\..\..\src\api</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\src\material\uniaxial\backbone;..\..\..\OTHER\MUMPS_4.7.3\include;..\..\..\src\system_of_eqn\linearSOE\mumps;..\..\..\src\reliability\analysis\telm;..\..\..\src\domain\partitioner;..\..\..\src\domain\loadBalancer;..\..\..\SRC\reliability\optimization;..\..\..\src\graph\partitioner;..\..\..\OTHER\SuperLU_DIST_2.0\SRC;..\..\..\src\actor\shadow;..\..\..\src\domain\subdomain;c:\Program Files\MPICH2\include;..\..\..\SRC\domain\domain\partitioned;..\..\..\src\analysis\dof_grp;..\..\..\src\analysis\fe_ele;..\..\..\src\package;..\..\..\src\actor\message;..\..\..\src\actor\actor;..\..\..\src\actor\channel;..\..\..\src\actor\machineBroker;..\..\..\SRC\actor\address;..\..\..\src\system_of_eqn\linearSOE\diagonal;c:\Program Files\tcl\include;..\..\..\src\damage;..\..\..\src\material\uniaxial\py;..\..\..\src\reliability\fesensitivity;..\..\..\src\reliability\tcl;..\..\..\src\coordTransformation;..\..\..\src\material\section\repres\section;..\..\..\src\analysis\algorithm\equiSolnAlgo;..\..\..\src\system_of_eqn\eigenSOE;..\..\..\src\analysis\algorithm\eigenAlgo;..\..\..\src\material\nD;..\..\..\src\material\uniaxial;..\..\..\src\handler;..\..\..\src\tcl;..\..\..\src\actor\objectBroker;..\..\..\src\system_of_eqn\linearSOE\umfGEN;..\..\..\src\system_of_eqn\linearSOE\fullGEN;..\..\..\src\system_of_eqn\linearSOE\sparseGEN;..\..\..\src\system_of_eqn\linearSOE\bandSPD;..\..\..\src\system_of_eqn\linearSOE\bandGEN;..\..\..\src\element\nonlinearBeamColumn\tcl\repres\section;..\..\..\src\matrix;..\..\..\src\recorder;..\..\..\src\graph\numberer;..\..\..\src\material\section;..\..\..\src\graph\graph;..\..\..\src\element\beam2d;..\..\..\src\element\beam3d;..\..\..\src\system_of_eqn;..\..\..\src\system_of_eqn\linearSOE;..\..\..\src\system_of_eqn\linearSOE\profileSPD;..\..\..\src\system_of_eqn\linearSOE\sparseSYM;..\..\..\src\domain\pattern;..\..\..\src\analysis\analysis;..\..\..\src\analysis\integrator;..\..\..\src\analysis\numberer;..\..\..\src\analysis\handler;..\..\..\src\renderer;..\..\..\src\material;..\..\..\src\analysis\algorithm;..\..\..\src\convergenceTest;..\..\..\src\analysis\model\simple;..\..\..\src\domain\load;..\..\..\src\analysis\model;..\..\..\src\element\truss;..\..\..\src\utility;..\..\..\src\modelbuilder;..\..\..\src\modelbuilder\tcl;..\..\..\src\domain\constraints;..\..\..\src\domain\component;..\..\..\src\element;..\..\..\src\domain\node;..\..\..\src\domain\domain;..\..\..\src\tagged\storage;..\..\..\src;..\..\..\src\tagged;..\..\..\src\reliability\domain;..\..\..\src\reliability\domain\components;..\..\..\src\reliability\domain\distributions;..\..\..\src\reliability\analysis;..\..\..\src\reliability\analysis\analysis;..\..\..\src\reliability\analysis\curvature;..\..\..\src\reliability\analysis\designPoint;..\..\..\src\reliability\analysis\direction;..\..\..\src\reliability\analysis\gFunction;..\..\..\src\reliability\analysis\misc;..\..\..\src\reliability\analysis\randomNumber;..\..\..\src\reliability\analysis\sensitivity;..\..\..\src\reliability\analysis\stepSize;..\..\..\src\reliability\analysis\transformation;..\..\..\src\nDarray;..\..\..\src\system_of_eqn\linearSOE\cg;..\..\..\src\system_of_eqn\linearSOE\itpack;..\..\..\other\SuperLU_3.0\SRC;..\..\..\src\database;..\..\..\src\element\updatedLagrangianBeamColumn;..\..\..\src\material\yieldSurface\yieldSurfaceBC;..\..\..\src\material\yieldSurface\evolution;..\..\..\src\material\yieldSurface\plasticHardeningMaterial;..\..\..\src\reliability\domain\modulatingFunction;..\..\..\src\reliability\domain\spectrum;..\..\..\src\reliability\domain\filter;..\..\..\src\reliability\analysis\hessianApproximation;..\..\..\src\reliability\analysis\convergenceCheck;..\..\..\src\reliability\analysis\meritFunction;..\..\..\src\reliability\analysis\rootFinding;c:\Program Files\Tcl\include;c:\Program Files\tcl;%(AdditionalIncludeDirectories);..\..\..\src\material\uniaxial\limitState\limitCurve;..\..\..\src\recorder\response;..\..\..\src\element\frictionBearing\frictionModel;..\..\..\src\material\uniaxial\stiffness;..\..\..\src\material\uniaxial\strength;..\..\..\src\material\uniaxial\unloading;..\..\..\src\element\forceBeamColumn;..\..\..\src\api;C:\Program Files (x86)\Microsoft SDKs\MPI\Include;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\OTHER\CSPARSE;..\..\..\OTHER\SuperLU_5.1.1\SRC;..\..\..\src\reliability\domain\performanceFunction;..\..\..\src\optimization\domain\component;..\..\..\src\optimization\domain;..\..\..\src\optimization\tcl;..\..\..\src\optimization\SNOPT</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_WGL;_RELIABILITY;_WIN32;_FORTRAN;WIN32;_CONSOLE;BUILD_tcl;_TCL85;_PARALLEL_PROCESSING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -102,10 +168,10 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 /FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>parallel.lib;distributedSuperLU.lib;handler.lib;OpenGL32.lib;wsock32.lib;glu32.lib;GlAux.lib;damage.lib;fedeas.lib;drain.lib;reliability.lib;database.lib;renderer.lib;blas.lib;lapack.lib;feap.lib;arpack.lib;umfpack.lib;actor.lib;analysis.lib;mpi.lib;cblas.lib;convergence.lib;domain.lib;element.lib;graph.lib;material.lib;matrix.lib;modelbuilder.lib;recorder.lib;superLU.lib;system.lib;tagged.lib;utility.lib;tcl85.lib;tk85.lib;libm.lib;ifconsol.lib;libifcore.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>parallel.lib;distributedSuperLU.lib;handler.lib;OpenGL32.lib;wsock32.lib;glu32.lib;damage.lib;fedeas.lib;drain.lib;reliability.lib;database.lib;renderer.lib;blas.lib;lapack.lib;feap.lib;arpack.lib;umfpack.lib;actor.lib;analysis.lib;msmpi.lib;cblas.lib;convergence.lib;domain.lib;element.lib;graph.lib;material.lib;matrix.lib;modelbuilder.lib;recorder.lib;superLU.lib;system.lib;tagged.lib;utility.lib;tcl86t.lib;tk86t.lib;libmmt.lib;ifconsol.lib;libifcoremt.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\..\..\bin/OpenSeesSP.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>c:\Program Files\MPICH2\lib;c:\program Files\tcl\lib;..\..\lib;..\..\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>c:\Program Files\MPICH2\lib;c:\program Files\tcl\lib;..\..\lib;..\..\lib\debug;%(AdditionalLibraryDirectories);C:\Program Files %28x86%29\Microsoft SDKs\MPI\Lib\x64;c:\libx64</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\..\..\bin/openSeesSP.pdb</ProgramDatabaseFile>
@@ -119,10 +185,52 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\OTHER\MUMPS_5.2.1\include;..\..\..\OTHER\METIS;..\..\..\OTHER\SuperLU_DIST_4.3\SRC;..\..\..\OTHER\UMFPACK;..\..\..\OTHER\SuperLU_5.1.1\SRC;..\..\..\src\material\uniaxial\backbone;..\..\..\src\system_of_eqn\linearSOE\mumps;..\..\..\src\reliability\analysis\telm;..\..\..\src\domain\partitioner;..\..\..\src\domain\loadBalancer;..\..\..\SRC\reliability\optimization;..\..\..\src\graph\partitioner;..\..\..\src\actor\shadow;..\..\..\src\domain\subdomain;..\..\..\SRC\domain\domain\partitioned;..\..\..\src\analysis\dof_grp;..\..\..\src\analysis\fe_ele;..\..\..\src\package;..\..\..\src\actor\message;..\..\..\src\actor\actor;..\..\..\src\actor\channel;..\..\..\src\actor\machineBroker;..\..\..\SRC\actor\address;..\..\..\src\system_of_eqn\linearSOE\diagonal;c:\Program Files\tcl\include;..\..\..\src\damage;..\..\..\src\material\uniaxial\py;..\..\..\src\reliability\fesensitivity;..\..\..\src\reliability\tcl;..\..\..\src\coordTransformation;..\..\..\src\material\section\repres\section;..\..\..\src\analysis\algorithm\equiSolnAlgo;..\..\..\src\system_of_eqn\eigenSOE;..\..\..\src\analysis\algorithm\eigenAlgo;..\..\..\src\material\nD;..\..\..\src\material\uniaxial;..\..\..\src\handler;..\..\..\src\tcl;..\..\..\src\actor\objectBroker;..\..\..\src\system_of_eqn\linearSOE\umfGEN;..\..\..\src\system_of_eqn\linearSOE\fullGEN;..\..\..\src\system_of_eqn\linearSOE\sparseGEN;..\..\..\src\system_of_eqn\linearSOE\bandSPD;..\..\..\src\system_of_eqn\linearSOE\bandGEN;..\..\..\src\element\nonlinearBeamColumn\tcl\repres\section;..\..\..\src\matrix;..\..\..\src\recorder;..\..\..\src\graph\numberer;..\..\..\src\material\section;..\..\..\src\graph\graph;..\..\..\src\element\beam2d;..\..\..\src\element\beam3d;..\..\..\src\system_of_eqn;..\..\..\src\system_of_eqn\linearSOE;..\..\..\src\system_of_eqn\linearSOE\profileSPD;..\..\..\src\system_of_eqn\linearSOE\sparseSYM;..\..\..\src\domain\pattern;..\..\..\src\analysis\analysis;..\..\..\src\analysis\integrator;..\..\..\src\analysis\numberer;..\..\..\src\analysis\handler;..\..\..\src\renderer;..\..\..\src\material;..\..\..\src\analysis\algorithm;..\..\..\src\convergenceTest;..\..\..\src\analysis\model\simple;..\..\..\src\domain\load;..\..\..\src\analysis\model;..\..\..\src\element\truss;..\..\..\src\utility;..\..\..\src\modelbuilder;..\..\..\src\modelbuilder\tcl;..\..\..\src\domain\constraints;..\..\..\src\domain\component;..\..\..\src\element;..\..\..\src\domain\node;..\..\..\src\domain\domain;..\..\..\src\tagged\storage;..\..\..\src;..\..\..\src\tagged;..\..\..\src\reliability\domain;..\..\..\OTHER\CSPARSE;..\..\..\src\reliability\domain\components;..\..\..\src\reliability\domain\distributions;..\..\..\src\reliability\analysis;..\..\..\src\reliability\analysis\analysis;..\..\..\src\reliability\analysis\curvature;..\..\..\src\reliability\analysis\designPoint;..\..\..\src\reliability\analysis\direction;..\..\..\src\reliability\analysis\gFunction;..\..\..\src\reliability\analysis\misc;C:\Program Files (x86)\Microsoft SDKs\MPI\Include;..\..\..\src\reliability\analysis\randomNumber;..\..\..\src\reliability\analysis\sensitivity;..\..\..\src\reliability\analysis\stepSize;..\..\..\src\reliability\analysis\transformation;..\..\..\src\nDarray;..\..\..\src\system_of_eqn\linearSOE\cg;..\..\..\src\system_of_eqn\linearSOE\itpack;..\..\..\src\database;..\..\..\src\element\updatedLagrangianBeamColumn;..\..\..\src\material\yieldSurface\yieldSurfaceBC;..\..\..\src\material\yieldSurface\evolution;..\..\..\src\material\yieldSurface\plasticHardeningMaterial;..\..\..\src\reliability\domain\modulatingFunction;..\..\..\src\reliability\domain\spectrum;..\..\..\src\reliability\domain\filter;..\..\..\src\reliability\analysis\hessianApproximation;..\..\..\src\reliability\analysis\convergenceCheck;..\..\..\src\reliability\analysis\meritFunction;..\..\..\src\reliability\analysis\rootFinding;..\..\..\src\material\nD\stressDensityModel;c:\Program Files\Tcl\include;c:\Program Files\tcl;%(AdditionalIncludeDirectories);..\..\..\src\material\uniaxial\limitState\limitCurve;..\..\..\src\recorder\response;..\..\..\src\element\frictionBearing\frictionModel;..\..\..\src\material\uniaxial\stiffness;..\..\..\src\material\uniaxial\strength;..\..\..\src\material\uniaxial\unloading;..\..\..\src\element\forceBeamColumn;..\..\..\src\api;..\..\..\src\analysis\algorithm\equiSolnAlgo\accelerator;..\..\..\src\reliability\domain\performanceFunction;..\..\..\src\optimization\domain\component;..\..\..\src\optimization\domain;..\..\..\src\optimization\tcl;..\..\..\src\optimization\SNOPT;..\..\..\src\domain\domain\partitioned;..\..\..\src\element\PML</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WGL;_RELIABILITY;_WIN32;_WIN64;_FORTRAN;WIN32;WIN64;_CONSOLE;BUILD_tcl;_TCL85;_CRT_SECURE_NO_WARNINGS;_PARALLEL_PROCESSING;USEEND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\..\..\obj\openseesSP\debug/openSees.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\..\..\obj\openseesSP\debug/</AssemblerListingLocation>
+      <ObjectFileName>.\..\..\obj\openseesSP\debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\..\..\obj\openseesSP\debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>parallel.lib;handler.lib;OpenGL32.lib;wsock32.lib;glu32.lib;damage.lib;fedeas.lib;drain.lib;reliability.lib;database.lib;renderer.lib;blas.lib;lapack.lib;feap.lib;arpack.lib;umfpack.lib;actor.lib;analysis.lib;msmpi.lib;cblas.lib;convergence.lib;domain.lib;element.lib;graph.lib;material.lib;matrix.lib;modelbuilder.lib;recorder.lib;superLU.lib;system.lib;tagged.lib;utility.lib;tcl86t.lib;tk86t.lib;libmmt.lib;ifconsol.lib;libifcoremt.lib;odbc32.lib;odbccp32.lib;sdmuc.lib;DoddRestrepo.lib;umfpackC.lib;cssparse.lib;opengl32.lib;optimization.lib;PML.lib;tcl.lib;distributedSuperLU.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\..\..\bin/OpenSeesSP.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>c:\program Files\tcl\lib;..\..\lib;..\..\lib\debug;%(AdditionalLibraryDirectories);C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64;c:\libx64</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\..\bin/openSeesSP.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <AssemblyDebug>
+      </AssemblyDebug>
+    </Link>
+    <Midl>
+      <TypeLibraryName>.\..\..\bin/openSees.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\SRC\actor\channel\socket.c" />
+    <ClCompile Include="..\..\..\SRC\element\frictionBearing\frictionModel\TclModelBuilderFrictionModelCommand.cpp" />
+    <ClCompile Include="..\..\..\SRC\material\uniaxial\strength\TclModelBuilderStrengthDegradationCommand.cpp" />
     <ClCompile Include="..\..\..\SRC\modelbuilder\tcl\myCommands.cpp" />
     <ClCompile Include="..\..\..\SRC\modelbuilder\tcl\TclModelBuilder.cpp" />
+    <ClCompile Include="..\..\..\SRC\modelbuilder\tcl\TclPlaneStressMaterialTester.cpp" />
     <ClCompile Include="..\..\..\SRC\modelbuilder\tcl\TclSectionTester.cpp" />
     <ClCompile Include="..\..\..\SRC\modelbuilder\tcl\TclUniaxialMaterialTester.cpp" />
     <ClCompile Include="..\..\..\SRC\tcl\commands.cpp" />
@@ -136,6 +244,86 @@
     <ClInclude Include="..\..\..\SRC\modelbuilder\tcl\TclSectionTester.h" />
     <ClInclude Include="..\..\..\SRC\OPS_Globals.h" />
     <ClInclude Include="..\..\..\SRC\tcl\commands.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\actor\actor.vcxproj">
+      <Project>{d9026bc0-b5bf-3be9-e9cb-3491638f2c38}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\analysis\analysis.vcxproj">
+      <Project>{71832cb0-ed48-1caf-ecb3-b9ad954d38e5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cblas\cblas.vcxproj">
+      <Project>{310dc5fa-1613-d953-4008-15056952e467}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\convergence\convergence.vcxproj">
+      <Project>{63511522-ebef-1468-ad6b-0f365ca756a9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cssparse\cssparse.vcxproj">
+      <Project>{542b4ec8-400f-4be5-a0a1-a53e8830606c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\damage\damage.vcxproj">
+      <Project>{0775a4b2-93d2-4440-83b7-c1df58021602}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\database\database.vcxproj">
+      <Project>{2b908396-b6b4-c511-d0e2-87620530aaa2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\distributedSuperLU\distributedSuperLU.vcxproj">
+      <Project>{6aedf524-0033-4225-bc39-de5244992677}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\domain\domain.vcxproj">
+      <Project>{10be1d68-585d-6b54-0c7f-0cf2962c52f1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\element\element.vcxproj">
+      <Project>{8062b50d-a609-33d0-8223-81d898de05d5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\graph\graph.vcxproj">
+      <Project>{771cf0b5-a9ed-0cba-dcc2-94ee2ff499e8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\handler\handler.vcxproj">
+      <Project>{a6947a93-dfd1-060e-f426-ae10230f7861}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\material\material.vcxproj">
+      <Project>{b3b28eab-160f-635a-cd8a-4c4baa55cf78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\matrix\matrix.vcxproj">
+      <Project>{a2422b53-1a88-cbc2-aaa3-3a727c91e852}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\modelbuilder\modelbuilder.vcxproj">
+      <Project>{d4304671-12ad-a3ab-e4c8-90005c96311c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\optimization\optimization.vcxproj">
+      <Project>{d1c15272-e650-4be0-9daf-b79f984d623d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\parallel\parallel.vcxproj">
+      <Project>{717759c7-0b99-485f-bb63-c25ce58cc1c5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\recorder\recorder.vcxproj">
+      <Project>{5bb0e918-ce81-7129-15f5-2a3470e92427}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\reliability\reliability.vcxproj">
+      <Project>{85f9e3f0-a6e0-6a77-9683-7150b4be5a09}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\renderer\renderer.vcxproj">
+      <Project>{c7780c72-e360-ab77-79d6-f5ceb52c2f00}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\string\string.vcxproj">
+      <Project>{767a7605-a645-c010-dcdd-f981dd6e0a61}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\superLU\superLU.vcxproj">
+      <Project>{931a4de5-3af2-18c7-6370-37e5deda392a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\system\system.vcxproj">
+      <Project>{e68180c9-479c-a9c1-3832-cef06b7f9d8c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\tagged\tagged.vcxproj">
+      <Project>{3285d0ef-7169-f5be-c3ac-3752aaebb765}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\tcl\tcl.vcxproj">
+      <Project>{b4f48abb-2789-4753-aa82-7e2c1954d31a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\utility\utility.vcxproj">
+      <Project>{72ceb368-613b-3977-7be6-0155a5f1ddbc}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

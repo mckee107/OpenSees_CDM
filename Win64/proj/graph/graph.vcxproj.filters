@@ -12,6 +12,9 @@
     <Filter Include="amd">
       <UniqueIdentifier>{bcd223f9-8ee6-4b55-88f4-ec5d80958733}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\partitioner">
+      <UniqueIdentifier>{c2424211-e4aa-46b6-9604-d7177cfd22e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\SRC\graph\numberer\AMDNumberer.cpp">
@@ -89,6 +92,9 @@
     <ClCompile Include="..\..\..\OTHER\AMD\amd_valid.c">
       <Filter>amd</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\graph\partitioner\Metis.cpp">
+      <Filter>Source Files\partitioner</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SRC\graph\numberer\AMDNumberer.h">
@@ -127,5 +133,19 @@
     <ClInclude Include="..\..\..\SRC\graph\graph\VertexIter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\SRC\graph\partitioner\GraphPartitioner.h">
+      <Filter>Source Files\partitioner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\graph\partitioner\Metis.h">
+      <Filter>Source Files\partitioner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\graph\partitioner\rename.h">
+      <Filter>Source Files\partitioner</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\SRC\graph\partitioner\GraphPartitioner.tex">
+      <Filter>Source Files\partitioner</Filter>
+    </None>
   </ItemGroup>
 </Project>

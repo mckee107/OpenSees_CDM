@@ -47,6 +47,9 @@
     <Filter Include="pardiso">
       <UniqueIdentifier>{723fd79e-0d4a-4e38-8be8-aebeea3e8a24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mumps">
+      <UniqueIdentifier>{dfecb839-b6f7-462a-bf37-299e92dd4588}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\DomainSolver.cpp">
@@ -232,6 +235,39 @@
     <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\PFEMSolver_Mumps.cpp">
       <Filter>sparseGEN</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\c_example.c">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\c_example1.cpp">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\example.cpp">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsParallelSOE.cpp">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsParallelSolver.cpp">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsSOE.cpp">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsSolver.cpp">
+      <Filter>mumps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSparseGenColLinSOE.cpp">
+      <Filter>sparseGEN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSparseGenRowLinSOE.cpp">
+      <Filter>sparseGEN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSparseGenRowLinSolver.cpp">
+      <Filter>sparseGEN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSuperLU.cpp">
+      <Filter>sparseGEN</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\DomainSolver.h">
@@ -405,5 +441,34 @@
     <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\PFEMSolver_Mumps.h">
       <Filter>sparseGEN</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsParallelSOE.h">
+      <Filter>mumps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsParallelSolver.h">
+      <Filter>mumps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsSOE.h">
+      <Filter>mumps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\MumpsSolver.h">
+      <Filter>mumps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSparseGenColLinSOE.h">
+      <Filter>sparseGEN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSparseGenRowLinSOE.h">
+      <Filter>sparseGEN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSparseGenRowLinSolver.h">
+      <Filter>sparseGEN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\system_of_eqn\linearSOE\sparseGEN\DistributedSuperLU.h">
+      <Filter>sparseGEN</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\SRC\system_of_eqn\linearSOE\mumps\CMakeLists.txt">
+      <Filter>mumps</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -383,6 +383,18 @@
     <ClCompile Include="..\..\..\SRC\analysis\integrator\StagedNewmark.cpp">
       <Filter>integrator</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\analysis\integrator\DistributedDisplacementControl.cpp">
+      <Filter>integrator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\analysis\analysis\StaticDomainDecompositionAnalysis.cpp">
+      <Filter>analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\analysis\analysis\TransientDomainDecompositionAnalysis.cpp">
+      <Filter>analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\analysis\numberer\ParallelNumberer.cpp">
+      <Filter>numberer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SRC\analysis\analysis\Analysis.h">
@@ -726,6 +738,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\SRC\analysis\integrator\StagedNewmark.h">
       <Filter>integrator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\analysis\integrator\DistributedDisplacementControl.h">
+      <Filter>integrator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\analysis\analysis\StaticDomainDecompositionAnalysis.h">
+      <Filter>analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\analysis\analysis\TransientDomainDecompositionAnalysis.h">
+      <Filter>analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\analysis\numberer\ParallelNumberer.h">
+      <Filter>numberer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -36,6 +36,7 @@
 #include <OPS_Globals.h>
 
 #define ICNTL(I) icntl[(I)-1] /* macro s.t. indices match documentation */
+//#define _PARALLEL_PROCESSING
 
 #ifdef _PARALLEL_PROCESSING
 #include <mpi.h>

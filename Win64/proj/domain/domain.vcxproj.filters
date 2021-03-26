@@ -40,6 +40,15 @@
     <Filter Include="load\shell">
       <UniqueIdentifier>{171577b3-4b22-46e8-929e-386e834719f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="domain\partitioned">
+      <UniqueIdentifier>{141f57bd-1c74-4550-b9bc-852c15e653a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="partitioner">
+      <UniqueIdentifier>{75fc937e-255d-4d27-9234-b7f8fd9984d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loadBalancer">
+      <UniqueIdentifier>{7d3cde9d-0b3d-4e95-9ec0-89850d144933}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\SRC\domain\node\NodalLoad.cpp">
@@ -312,6 +321,39 @@
     <ClCompile Include="..\..\..\SRC\domain\load\Beam3dPartialUniformLoad.cpp">
       <Filter>load\beam</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomain.cpp">
+      <Filter>domain\partitioned</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomainEleIter.cpp">
+      <Filter>domain\partitioned</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomainSubIter.cpp">
+      <Filter>domain\partitioned</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\partitioner\DomainPartitioner.cpp">
+      <Filter>partitioner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\loadBalancer\LoadBalancer.cpp">
+      <Filter>loadBalancer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\loadBalancer\ReleaseHeavierToLighterNeighbours.cpp">
+      <Filter>loadBalancer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\loadBalancer\ShedHeaviest.cpp">
+      <Filter>loadBalancer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\loadBalancer\SwapHeavierToLighterNeighbours.cpp">
+      <Filter>loadBalancer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\subdomain\ActorSubdomain.cpp">
+      <Filter>domain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\subdomain\ShadowSubdomain.cpp">
+      <Filter>domain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\domain\subdomain\ShadowSubdomainActor.cpp">
+      <Filter>domain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SRC\domain\node\NodalLoad.h">
@@ -578,5 +620,55 @@
     <ClInclude Include="..\..\..\SRC\domain\load\Beam3dPartialUniformLoad.h">
       <Filter>load\beam</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomain.h">
+      <Filter>domain\partitioned</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomainEleIter.h">
+      <Filter>domain\partitioned</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomainSubIter.h">
+      <Filter>domain\partitioned</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\partitioner\DomainPartitioner.h">
+      <Filter>partitioner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\loadBalancer\LoadBalancer.h">
+      <Filter>loadBalancer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\loadBalancer\ReleaseHeavierToLighterNeighbours.h">
+      <Filter>loadBalancer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\loadBalancer\ShedHeaviest.h">
+      <Filter>loadBalancer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\loadBalancer\SwapHeavierToLighterNeighbours.h">
+      <Filter>loadBalancer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\subdomain\ActorSubdomain.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\subdomain\ShadowActorSubdomain.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\SRC\domain\subdomain\ShadowSubdomain.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\SRC\domain\domain\partitioned\PartitionedDomain.tex">
+      <Filter>domain\partitioned</Filter>
+    </None>
+    <None Include="..\..\..\SRC\domain\loadBalancer\LoadBalancer.tex">
+      <Filter>loadBalancer</Filter>
+    </None>
+    <None Include="..\..\..\SRC\domain\loadBalancer\ReleaseHeavierToLighterNeighbours.tex">
+      <Filter>loadBalancer</Filter>
+    </None>
+    <None Include="..\..\..\SRC\domain\loadBalancer\ShedHeaviest.tex">
+      <Filter>loadBalancer</Filter>
+    </None>
+    <None Include="..\..\..\SRC\domain\loadBalancer\SwapHeavierToLighterNeighbours.tex">
+      <Filter>loadBalancer</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -201,11 +201,14 @@
     <ClCompile Include="..\..\..\SRC\analysis\analysis\DomainDecompositionAnalysis.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\analysis\PFEMAnalysis.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\analysis\StaticAnalysis.cpp" />
+    <ClCompile Include="..\..\..\SRC\analysis\analysis\StaticDomainDecompositionAnalysis.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\analysis\TransientAnalysis.cpp" />
+    <ClCompile Include="..\..\..\SRC\analysis\analysis\TransientDomainDecompositionAnalysis.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\analysis\VariableTimeStepDirectIntegrationAnalysis.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\analysis\ResponseSpectrumAnalysis.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\AlphaOSGeneralized_TP.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\AlphaOS_TP.cpp" />
+    <ClCompile Include="..\..\..\SRC\analysis\integrator\DistributedDisplacementControl.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\EQPath.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\ExplicitDifference.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\GimmeMCK.cpp" />
@@ -298,6 +301,7 @@
     <ClCompile Include="..\..\..\SRC\analysis\integrator\TransientIntegrator.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\integrator\WilsonTheta.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\numberer\DOF_Numberer.cpp" />
+    <ClCompile Include="..\..\..\SRC\analysis\numberer\ParallelNumberer.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\numberer\PlainNumberer.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\handler\ConstraintHandler.cpp" />
     <ClCompile Include="..\..\..\SRC\analysis\handler\LagrangeConstraintHandler.cpp" />
@@ -317,11 +321,14 @@
     <ClInclude Include="..\..\..\SRC\analysis\analysis\DomainDecompositionAnalysis.h" />
     <ClInclude Include="..\..\..\SRC\analysis\analysis\PFEMAnalysis.h" />
     <ClInclude Include="..\..\..\SRC\analysis\analysis\StaticAnalysis.h" />
+    <ClInclude Include="..\..\..\SRC\analysis\analysis\StaticDomainDecompositionAnalysis.h" />
     <ClInclude Include="..\..\..\SRC\analysis\analysis\TransientAnalysis.h" />
+    <ClInclude Include="..\..\..\SRC\analysis\analysis\TransientDomainDecompositionAnalysis.h" />
     <ClInclude Include="..\..\..\SRC\analysis\analysis\VariableTimeStepDirectIntegrationAnalysis.h" />
     <ClInclude Include="..\..\..\SRC\analysis\analysis\ResponseSpectrumAnalysis.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\AlphaOSGeneralized_TP.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\AlphaOS_TP.h" />
+    <ClInclude Include="..\..\..\SRC\analysis\integrator\DistributedDisplacementControl.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\EQPath.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\ExplicitDifference.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\GimmeMCK.h" />
@@ -414,6 +421,7 @@
     <ClInclude Include="..\..\..\SRC\analysis\integrator\TransientIntegrator.h" />
     <ClInclude Include="..\..\..\SRC\analysis\integrator\WilsonTheta.h" />
     <ClInclude Include="..\..\..\SRC\analysis\numberer\DOF_Numberer.h" />
+    <ClInclude Include="..\..\..\SRC\analysis\numberer\ParallelNumberer.h" />
     <ClInclude Include="..\..\..\SRC\analysis\numberer\PlainNumberer.h" />
     <ClInclude Include="..\..\..\SRC\analysis\handler\ConstraintHandler.h" />
     <ClInclude Include="..\..\..\SRC\analysis\handler\LagrangeConstraintHandler.h" />

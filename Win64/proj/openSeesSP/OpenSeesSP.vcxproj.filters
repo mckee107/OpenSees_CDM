@@ -41,6 +41,15 @@
     <ClCompile Include="..\..\..\SRC\tcl\tclMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\SRC\modelbuilder\tcl\TclPlaneStressMaterialTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\element\frictionBearing\frictionModel\TclModelBuilderFrictionModelCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\SRC\material\uniaxial\strength\TclModelBuilderStrengthDegradationCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SRC\OPS_Globals.h">
